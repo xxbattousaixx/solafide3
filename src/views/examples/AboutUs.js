@@ -1,7 +1,7 @@
 
 import React from "react";
 import LazyLoad from 'react-lazyload';
-import {Helmet} from "react-helmet";
+import {Helmet, HelmetProvider} from "react-helmet-async";
 
 // reactstrap components
 import {
@@ -85,10 +85,10 @@ export default function AboutUs() {
                      <br />
                     <strong style={{color:'gold'}} >Solafide</strong>
                   </h1>
-                  <Helmet>
-                    Solafide Services is dedicated to enhancing the beauty of Floridas residential and commercial outdoors. Edgar and his team of experts specialize in crafting breathtaking waterfalls, durable stone decks, elegant concrete landscape curbing, inviting gazebos, cozy fire pits, and a wide array of other outdoor stone, concrete, paver features. The name "Solafide," meaning "by faith alone," reflects Edgar's deep-rooted faith and the principles of integrity and trust that guide his business. 
+                <HelmetProvider>  <Helmet>
+                    Solafide Services is dedicated to enhancing the beauty of Florida'ss residential and commercial outdoors. Edgar and his team of experts specialize in crafting breathtaking waterfalls, durable stone decks, elegant concrete landscape curbing, inviting gazebos, cozy fire pits, and a wide array of other outdoor stone, concrete, paver features. The name "Solafide," meaning "by faith alone," reflects Edgar's deep-rooted faith and the principles of integrity and trust that guide his business. 
                       <meta name="description" content="Florida beauty residential gazebo fire pit masonry sealer commercial edgar mena  experts waterfalls outdoors stone decks concrete landscaping curbing " />
-                      </Helmet>
+                      </Helmet></HelmetProvider>
                   <p className="description">     Solafide Services is dedicated to enhancing the beauty of Floridas residential and commercial outdoors. Edgar and his team of experts specialize in crafting breathtaking waterfalls, durable stone decks, elegant concrete landscape curbing, inviting gazebos, cozy fire pits, and a wide array of other outdoor stone, concrete, paver features. The name "Solafide," meaning "by faith alone," reflects Edgar's deep-rooted faith and the principles of integrity and trust that guide his business. 
 
                   </p>

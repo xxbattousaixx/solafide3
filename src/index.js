@@ -9,7 +9,7 @@ import "assets/css/nucleo-icons.css";
 import "assets/scss/blk-design-system-pro-react.scss?v1.2.0";
 import "assets/demo/demo.css";
 import "assets/demo/react-demo.css";
-
+import { HelmetProvider } from 'react-helmet-async';
 // presentation pages
 import Index from "views/Index.js";
 // example pages
@@ -26,6 +26,7 @@ import Gallery from "views/examples/LandingPage.js";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
+  <HelmetProvider>
   <BrowserRouter>
     <Routes>
       <Route path="/index" element={<Index />} />
@@ -43,5 +44,5 @@ root.render(
 
       <Route path="/" element={<Navigate to="/index" replace />} />
     </Routes>
-  </BrowserRouter>
+  </BrowserRouter></HelmetProvider>
 );

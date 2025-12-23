@@ -1,7 +1,7 @@
 
 import React from "react";
 import LazyLoad from 'react-lazyload';
-import {Helmet} from "react-helmet";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import {
   Button,
   Form,
@@ -39,10 +39,10 @@ const items2 = [
           </a>
         </div>
         <h4 className="info-title"><b>Gregory J.</b> St. Petersburg, FL ⭐⭐⭐⭐⭐ </h4>
-       <Helmet><p className="description">
+       <HelmetProvider><Helmet><p className="description">
           I would highly recommend this company because of the quality of the work and of the personnel hired to perform the job. I have future plans for pavers and will use Solafide again.
         </p>
-          <meta name="description" content="personnel quality hired job pavers Solafide" /></Helmet><p className="description">
+          <meta name="description" content="personnel quality hired job pavers Solafide" /></Helmet></HelmetProvider><p className="description">
           I would highly recommend this company because of the quality of the work and of the personnel hired to perform the job. I have future plans for pavers and will use Solafide again.
         </p>
       </div>
@@ -64,9 +64,9 @@ const items2 = [
           </a>
         </div>
         <h4 className="info-title">&nbsp;&nbsp;&nbsp;&nbsp;<b>Julia R.</b> Bradenton, FL &nbsp;&nbsp;&nbsp;&nbsp; ⭐⭐⭐⭐⭐</h4>
-        <Helmet><p className="description">
+       <HelmetProvider> <Helmet><p className="description">
           What a pleasure working with Edgar. Great service very polite such a great experience and amazing work results !! Very satisfied and would recommend them 200% Thank You
-        </p>  <meta name="description" content="amazing work service experience results satisfied" /></Helmet><p className="description">
+        </p>  <meta name="description" content="amazing work service experience results satisfied" /></Helmet></HelmetProvider><p className="description">
           What a pleasure working with Edgar. Great service very polite such a great experience and amazing work results !! Very satisfied and would recommend them 200% Thank You
         </p>
       </div>

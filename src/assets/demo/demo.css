@@ -1572,3 +1572,91 @@
   -webkit-animation-name: Floatingx;
   -moz-animation-name: Floatingx;
 }
+
+/* ===================================================
+   SOLAFIDE — 3D IMMERSIVE CARD STYLES
+   Inspired by moxy.studio depth & immersion
+   =================================================== */
+
+/* Service cards — 3D perspective tilt on hover */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.45s cubic-bezier(0.23, 1, 0.32, 1),
+              box-shadow 0.45s ease;
+  will-change: transform;
+  backface-visibility: hidden;
+  position: relative;
+}
+
+.card-3d:hover {
+  transform: rotateX(6deg) rotateY(-10deg) scale(1.04);
+  box-shadow:
+    28px 35px 80px rgba(0,0,0,0.85),
+    -4px -4px 30px rgba(255,215,0,0.1),
+    inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+/* Before/After full-background immersive cards */
+.card-immersive {
+  overflow: hidden;
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1),
+              box-shadow 0.5s ease;
+  will-change: transform;
+  position: relative;
+}
+
+.card-immersive::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,215,0,0.07) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 2;
+  border-radius: inherit;
+}
+
+.card-immersive:hover {
+  transform: translateY(-14px) scale(1.02);
+  box-shadow:
+    0 50px 100px rgba(0,0,0,0.75),
+    0 0 55px rgba(255,215,0,0.16);
+}
+
+.card-immersive:hover::after {
+  opacity: 1;
+}
+
+/* Feature / blog plain cards — clean upward lift */
+.card-lift {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.card-lift:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+}
+
+/* Section label pill */
+.section-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: gold;
+  border: 1px solid rgba(255,215,0,0.38);
+  padding: 4px 14px;
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+}
+
+/* Contact widget on About Us hero */
+.contact-widget {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,215,0,0.18);
+  border-radius: 10px;
+  padding: 2rem;
+  margin-top: 2rem;
+  backdrop-filter: blur(6px);
+}

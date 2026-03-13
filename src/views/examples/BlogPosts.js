@@ -1,8 +1,8 @@
 
 import React from "react";
 // nodejs library that concatenates classes
-import LazyLoad from 'react-lazyload';
-import classnames from "classnames";
+
+
 // reactstrap components
 import {
   Button,

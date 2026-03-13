@@ -250,20 +250,21 @@ const Solafide3DWalkthrough: React.FC<Solafide3DWalkthroughProps> = ({
   const contentPadding = isMobile ? '1.5rem' : '4rem';
   const maxContentWidth = compact ? '1000px' : '1400px';
   
+  // Use vh-clamped sizes so content always fits on short viewports
   const titleSize = {
-    base: isMobile ? '2.5rem' : (compact ? '4rem' : '5rem'),
+    base: isMobile ? 'clamp(1.8rem, 7vh, 2.5rem)' : (compact ? 'clamp(2.5rem, 7vh, 4rem)' : 'clamp(2.5rem, 9vh, 5rem)'),
     md: compact ? '6rem' : '8rem',
     lg: compact ? '8rem' : '10rem'
   };
   
   const subtitleSize = {
-    base: isMobile ? '1.75rem' : (compact ? '2.5rem' : '3rem'),
+    base: isMobile ? 'clamp(1.2rem, 5vh, 1.75rem)' : (compact ? 'clamp(1.5rem, 5vh, 2.5rem)' : 'clamp(1.5rem, 6vh, 3rem)'),
     md: compact ? '3.5rem' : '5rem',
     lg: compact ? '4.5rem' : '6rem'
   };
   
   const descSize = {
-    base: isMobile ? '0.875rem' : (compact ? '1.125rem' : '1.25rem'),
+    base: isMobile ? 'clamp(0.75rem, 2vh, 0.875rem)' : (compact ? 'clamp(0.875rem, 2vh, 1.125rem)' : 'clamp(0.875rem, 2vh, 1.25rem)'),
     md: compact ? '1.375rem' : '1.625rem',
     lg: compact ? '1.625rem' : '1.875rem'
   };
@@ -427,7 +428,7 @@ const Solafide3DWalkthrough: React.FC<Solafide3DWalkthroughProps> = ({
                       letterSpacing: '-0.05em',
                       lineHeight: 1,
                       margin: 0,
-                      marginBottom: compact ? '0.5rem' : '1rem',
+                      marginBottom: 'clamp(0.25rem, 1.5vh, 1rem)',
                       color: section.color,
                       textShadow: `0 0 40px ${section.color}88, 0 0 80px ${section.color}44`,
                       WebkitTextStroke: '1px rgba(255,255,255,0.1)',
@@ -446,7 +447,7 @@ const Solafide3DWalkthrough: React.FC<Solafide3DWalkthroughProps> = ({
                       color: '#fff',
                       lineHeight: 1,
                       margin: 0,
-                      marginBottom: compact ? '1rem' : '1.5rem',
+                      marginBottom: 'clamp(0.5rem, 2vh, 1.5rem)',
                       transform: `translateY(${y * 0.4}px)`,
                       textShadow: '0 4px 20px rgba(0,0,0,0.9)',
                       transition: 'none'
@@ -476,8 +477,8 @@ const Solafide3DWalkthrough: React.FC<Solafide3DWalkthroughProps> = ({
                     <button
                       onClick={handleCTAClick}
                       style={{
-                        marginTop: compact ? '1.5rem' : '2rem',
-                        padding: compact ? '0.875rem 2rem' : '1rem 2.5rem',
+                        marginTop: 'clamp(0.75rem, 2vh, 2rem)',
+                        padding: 'clamp(0.6rem, 1.5vh, 1rem) clamp(1.2rem, 3vw, 2.5rem)',
                         fontSize: compact ? '0.875rem' : '1rem',
                         fontWeight: 700,
                         borderRadius: '9999px',
@@ -511,7 +512,7 @@ const Solafide3DWalkthrough: React.FC<Solafide3DWalkthroughProps> = ({
         {currentSection === 0 && (
           <div style={{
             position: 'absolute',
-            bottom: compact ? '2rem' : '3rem',
+            bottom: 'clamp(0.75rem, 2.5vh, 3rem)',
             left: '50%',
             transform: 'translateX(-50%)',
             display: 'flex',
@@ -585,6 +586,42 @@ const Solafide3DWalkthrough: React.FC<Solafide3DWalkthroughProps> = ({
             </button>
           ))}
         </div>
+
+        {/* Skip Intro Button */}
+        {onComplete && (
+          <button
+            onClick={onComplete}
+            style={{
+              position: 'absolute',
+              top: compact ? '0.75rem' : '1.25rem',
+              right: compact ? '0.75rem' : '1.5rem',
+              zIndex: 30,
+              background: 'rgba(0,0,0,0.45)',
+              border: '1px solid rgba(255,255,255,0.35)',
+              borderRadius: '9999px',
+              color: '#fff',
+              fontFamily: 'inherit',
+              fontSize: compact ? '0.7rem' : '0.8rem',
+              fontWeight: 600,
+              letterSpacing: '0.08em',
+              padding: compact ? '0.35rem 0.9rem' : '0.45rem 1.2rem',
+              cursor: 'pointer',
+              backdropFilter: 'blur(8px)',
+              transition: 'background 0.2s ease, border-color 0.2s ease',
+              outline: 'none'
+            }}
+            onMouseOver={e => {
+              e.currentTarget.style.background = 'rgba(255,255,255,0.18)';
+              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.7)';
+            }}
+            onMouseOut={e => {
+              e.currentTarget.style.background = 'rgba(0,0,0,0.45)';
+              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.35)';
+            }}
+          >
+            SKIP INTRO →
+          </button>
+        )}
 
         {/* Counter */}
         <div style={{

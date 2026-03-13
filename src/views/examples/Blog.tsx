@@ -1,3 +1,5 @@
+import ColorNavbar from 'components/Navbars/ColorNavbar.js';
+import DemoFooter from 'components/Footers/DemoFooter.js';
 import {Button,Card, CardHeader, CardTitle, Badge} from "reactstrap";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -120,21 +122,7 @@ const Blog = () => {
         structuredData={structuredData}
       />
       <div className="min-h-screen black dark:black">
-      {/* Header */}
-      <header className="border-b border-border/20 bg-card/50 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2" aria-label="Solafide Services Home">
-            <span className="text-2xl font-bold text-accent">Solafide</span>
-            <span className="text-2xl font-bold text-card-foreground">• Services</span>
-          </Link>
-          <nav className="hidden md:flex gap-6" aria-label="Main navigation">
-            <Link to="/" className="text-card-foreground hover:text-accent transition-colors">
-              Home
-            </Link>
-
-          </nav>
-        </div>
-      </header>
+      <ColorNavbar />
 
       {/* Hero Section */}
       <section className="py-16 px-4 bg-gradient-to-b from-primary to-secondary/10">
@@ -213,14 +201,7 @@ const Blog = () => {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-border/20 mt-16 py-8 px-4 bg-card/30">
-        <div className="container mx-auto text-center">
-          <p className="text-muted-foreground">
-            © 2025 Solafide Services. Professional Masonry & Stone Specialists.
-          </p>
-        </div>
-      </footer>
+      <DemoFooter />
     </div>
     </>
   );

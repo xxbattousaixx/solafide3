@@ -2,6 +2,8 @@ import { Badge, Button } from "reactstrap";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import {SEO}  from "./SEO.tsx";
+import ColorNavbar from 'components/Navbars/ColorNavbar.js';
+import DemoFooter from 'components/Footers/DemoFooter.js';
 
 interface BlogPostContent {
   id: string;
@@ -193,21 +195,7 @@ const BlogPost = () => {
         structuredData={structuredData}
       />
       <div className="min-h-screen bg-primary dark:bg-primary">
-      {/* Header */}
-      <header className="border-b border-border/20 bg-card/50 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2" aria-label="Solafide Services Home">
-            <span className="text-2xl font-bold text-accent">Solafide</span>
-            <span className="text-2xl font-bold text-card-foreground">• Services</span>
-          </Link>
-          <nav className="hidden md:flex gap-6" aria-label="Main navigation">
-            <Link to="/" className="text-card-foreground hover:text-accent transition-colors">
-              Home
-            </Link>
-           
-          </nav>
-        </div>
-      </header>
+      <ColorNavbar />
 
       {/* Back Button */}
       <div className="container mx-auto px-4 pt-8 max-w-4xl">
@@ -279,14 +267,7 @@ const BlogPost = () => {
         </article>
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-border/20 mt-16 py-8 px-4 bg-card/30">
-        <div className="container mx-auto text-center">
-          <h2 className="text-muted-foreground">
-            © 2025 Solafide Services. Professional Masonry & Stone Specialists.
-          </h2>
-        </div>
-      </footer>
+      <DemoFooter />
     </div>
     </>
   );

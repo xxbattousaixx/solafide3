@@ -1,7 +1,7 @@
 
 import React from "react";
 import Solafide3DWalkthroughWrapper from 'components/Solafide3DWalkthroughWrapper.tsx';
-import { BrowserRouter, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 //     <Button
 //       className="btn-round btn-icon btn-simple slick-prev slick-arrow"
 //       color="primary"

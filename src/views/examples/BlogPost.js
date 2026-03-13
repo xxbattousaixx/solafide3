@@ -1,7 +1,7 @@
 
 import React from "react";
 // ReactJS plugin for a nice carousel
-import LazyLoad from 'react-lazyload';
+
 // reactstrap components
 import {
   Button,

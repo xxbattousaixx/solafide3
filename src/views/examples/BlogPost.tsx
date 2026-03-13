@@ -198,7 +198,7 @@ const BlogPost = () => {
       <ColorNavbar />
 
       {/* Back Button */}
-      <div className="container mx-auto px-4 pt-8 max-w-4xl">
+      <div className="container mx-auto px-4 pt-32 max-w-4xl">
         <Link to="/blog">
           <Button variant="ghost" className="mb-8 hover:bg-accent/10 text-foreground hover:text-accent">
             <ArrowLeft className="mr-2 h-4 w-4" />

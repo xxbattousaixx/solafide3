@@ -1,6 +1,6 @@
 
 import React from "react";
-import LazyLoad from 'react-lazyload';
+
 // reactstrap components
 import {
   Button,

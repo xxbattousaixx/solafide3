@@ -28,6 +28,7 @@ import {
   NavbarBrand,
   Navbar,
   NavItem,
+  NavLink,
   Nav,
   Container,
   Row,
@@ -101,13 +102,16 @@ export default function ColorNavbar() {
               </Row>
             </div>
             <Nav className="ml-auto" navbar>
-            <UncontrolledDropdown nav>
-            <DropdownToggle className="" color="default" to="/about-us"  tag={Link}>
-            About Us              </DropdownToggle>&nbsp;&nbsp;
-             <DropdownToggle className="" color="default" to="/blog"  tag={Link}>
-            Blog              </DropdownToggle>&nbsp;&nbsp;
-            <DropdownToggle className="" color="default" to="/gallery"  tag={Link}>
-Gallery             </DropdownToggle>
+              <NavItem>
+                <NavLink tag={Link} to="/about-us">About Us</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink tag={Link} to="/blog">Blog</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink tag={Link} to="/gallery">Gallery</NavLink>
+              </NavItem>
+              <UncontrolledDropdown nav>
                 <DropdownToggle caret color="default" nav>
                   <p>Services</p>
                 </DropdownToggle>
@@ -115,21 +119,16 @@ Gallery             </DropdownToggle>
                   <DropdownItem to="/residential" tag={Link}>
                     <i className="tim-icons icon-square-pin" />
                     Residential
-                  </DropdownItem>        
+                  </DropdownItem>
                   <DropdownItem to="/commercial" tag={Link}>
                     <i className="tim-icons icon-delivery-fast" />
                     Commercial
                   </DropdownItem>
-                   <DropdownItem to="/clean-seal" tag={Link}>
+                  <DropdownItem to="/clean-seal" tag={Link}>
                     <i className="tim-icons icon-vector" />
                     Clean & Seal
                   </DropdownItem>
-                  
                 </DropdownMenu>
-              </UncontrolledDropdown>
-              <UncontrolledDropdown nav>
-              
-
               </UncontrolledDropdown>
          
               {/* <UncontrolledDropdown nav>

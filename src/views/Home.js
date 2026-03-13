@@ -1,23 +1,18 @@
 
 import React from "react";
-import LazyLoad from 'react-lazyload';
 import { Helmet } from 'react-helmet-async';
 import {
   Button,
-  Form,
   Card,
   CardBody,
-  FormGroup,
-  Input,
   CardTitle,
-    Carousel,
+  Carousel,
   CarouselItem,
   CarouselIndicators,
   Container,
   Row,
   Col,
 } from "reactstrap";
-import { Link } from "react-router-dom";
 // core components
 import ColorNavbar from "components/Navbars/ColorNavbar.js";
 
@@ -228,7 +223,6 @@ export default function Home() {
                     />
                     <CardBody>
                       <div className="content-bottom">
-                        <h6 className="card-category"></h6>
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
                           <CardTitle tag="h3">BEFORE</CardTitle>
                         </a>
@@ -250,7 +244,6 @@ export default function Home() {
                     />
                     <CardBody>
                       <div className="content-bottom">
-                        <h6 className="card-category"></h6>
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
                           <CardTitle tag="h3">AFTER</CardTitle>
                         </a>

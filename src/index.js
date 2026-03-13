@@ -10,6 +10,7 @@ import "assets/scss/blk-design-system-pro-react.scss?v1.2.0";
 import "assets/demo/demo.css";
 import "assets/demo/react-demo.css";
 import { HelmetProvider } from 'react-helmet-async';
+import ScrollToTop from 'components/ScrollToTop';
 // presentation pages
 import Index from "views/Index.js";
 import Home from "views/Home.js";
@@ -33,6 +34,7 @@ if (root.hasChildNodes()) {
   ReactDOM.hydrateRoot(
   <HelmetProvider>
   <BrowserRouter>
+    <ScrollToTop />
     <Routes>
       <Route path="/index" element={<Index />} />
       <Route path="/home" element={<Home />} />
@@ -47,13 +49,12 @@ if (root.hasChildNodes()) {
       <Route path="/clean-seal" element={<Ecommerce />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/blog/:postId" element={<BlogPost />} />
-
-
 
       <Route path="/" element={<Navigate to="/index" replace />} />
     </Routes>
   </BrowserRouter></HelmetProvider>, root1)} else {root1.render( <HelmetProvider>
   <BrowserRouter>
+    <ScrollToTop />
     <Routes>
       <Route path="/index" element={<Index />} />
       <Route path="/home" element={<Home />} />
@@ -68,8 +69,6 @@ if (root.hasChildNodes()) {
       <Route path="/clean-seal" element={<Ecommerce />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/blog/:postId" element={<BlogPost />} />
-
-
 
       <Route path="/" element={<Navigate to="/index" replace />} />
     </Routes>

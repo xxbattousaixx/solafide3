@@ -10,6 +10,7 @@ const HomeRepairSelector = ({
   const cameraRef = useRef(null);
   const rendererRef = useRef(null);
   const housePartsRef = useRef({});
+  const [webglFailed, setWebglFailed] = useState(false);
   const [selectedPart, setSelectedPart] = useState(null);
   const [formStep, setFormStep] = useState(0);
   const [formData, setFormData] = useState({});
@@ -227,7 +228,17 @@ const HomeRepairSelector = ({
     camera.lookAt(0, 2, 0);
     cameraRef.current = camera;
 
-    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    let renderer;
+    try {
+      renderer = new THREE.WebGLRenderer({ antialias: true });
+    } catch (e) {
+      setWebglFailed(true);
+      return;
+    }
+    if (!renderer || !renderer.getContext()) {
+      setWebglFailed(true);
+      return;
+    }
     renderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
@@ -835,6 +846,38 @@ Submitted: ${new Date().toLocaleString()}
       setIsSubmitting(false);
     }
   };
+
+  if (webglFailed) {
+    return (
+      <div style={{ width:'100%', maxWidth:'600px', margin:'0 auto', padding:'2rem', textAlign:'center', color:'#fff' }}>
+        <h3 style={{ color:'gold', marginBottom:'1rem' }}>Request a Repair or Installation</h3>
+        <p style={{ color:'rgba(255,255,255,0.7)', marginBottom:'1.5rem' }}>
+          Tell us what you need and we'll get back to you within 24 hours.
+        </p>
+        <form
+          action="https://postmail.invotes.com/send"
+          method="post"
+          style={{ display:'flex', flexDirection:'column', gap:'0.8rem' }}
+        >
+          <input type="hidden" name="access_token" value="u3i8mym4hhvek1bb4z1p5qqv" />
+          <input type="hidden" name="success_url" value="?message=Email+Successfully+Sent" />
+          <input type="hidden" name="error_url" value="?message=Email+could+not+be+sent" />
+          <input type="text" name="subject" placeholder="Full Name" required
+            style={{ background:'rgba(255,255,255,0.08)', border:'1px solid rgba(255,255,255,0.2)', color:'#fff', borderRadius:'8px', padding:'0.7rem 1rem', fontSize:'0.95rem' }} />
+          <input type="email" name="reply_to" placeholder="Your Email" required
+            style={{ background:'rgba(255,255,255,0.08)', border:'1px solid rgba(255,255,255,0.2)', color:'#fff', borderRadius:'8px', padding:'0.7rem 1rem', fontSize:'0.95rem' }} />
+          <input type="tel" name="phone" placeholder="Phone Number"
+            style={{ background:'rgba(255,255,255,0.08)', border:'1px solid rgba(255,255,255,0.2)', color:'#fff', borderRadius:'8px', padding:'0.7rem 1rem', fontSize:'0.95rem' }} />
+          <textarea name="text" placeholder="Describe the repair or project in detail..." required rows={5}
+            style={{ background:'rgba(255,255,255,0.08)', border:'1px solid rgba(255,255,255,0.2)', color:'#fff', borderRadius:'8px', padding:'0.7rem 1rem', fontSize:'0.95rem', resize:'vertical' }} />
+          <button type="submit"
+            style={{ background:'linear-gradient(135deg, #f59e0b, #d97706)', border:'none', borderRadius:'9999px', color:'#fff', fontWeight:700, padding:'0.75rem 2rem', fontSize:'1rem', cursor:'pointer', alignSelf:'center', marginTop:'0.5rem' }}>
+            ✈ Send Request
+          </button>
+        </form>
+      </div>
+    );
+  }
 
   return (
     <div style={{

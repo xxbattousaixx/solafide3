@@ -1,7 +1,7 @@
 
 import React from "react";
 import LazyLoad from 'react-lazyload';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async';
 import {
   Button,
   Form,
@@ -23,7 +23,6 @@ import ColorNavbar from "components/Navbars/ColorNavbar.js";
 
 import IndexHeader from "components/Headers/IndexHeader.js";
 import DemoFooter from "components/Footers/DemoFooter.js";
-import Repairs from "components/Repairs.tsx";
 
 
 const items2 = [
@@ -40,12 +39,9 @@ const items2 = [
           </a>
         </div>
         <h4 className="info-title"><b>Gregory J.</b> St. Petersburg, FL ⭐⭐⭐⭐⭐ </h4>
-       <HelmetProvider><Helmet><body className="description">
+       <p className="description">
           I would highly recommend this company because of the quality of the work and of the personnel hired to perform the job. I have future plans for pavers and will use Solafide again.
-        </body>
-          <meta name="description" content="personnel quality hired job pavers Solafide" /></Helmet></HelmetProvider><body className="description">
-          I would highly recommend this company because of the quality of the work and of the personnel hired to perform the job. I have future plans for pavers and will use Solafide again.
-        </body>
+        </p>
       </div>
     ),
     altText: "",
@@ -65,11 +61,9 @@ const items2 = [
           </a>
         </div>
         <h4 className="info-title">&nbsp;&nbsp;&nbsp;&nbsp;<b>Julia R.</b> Bradenton, FL &nbsp;&nbsp;&nbsp;&nbsp; ⭐⭐⭐⭐⭐</h4>
-       <HelmetProvider> <Helmet><body className="description">
+       <p className="description">
           What a pleasure working with Edgar. Great service very polite such a great experience and amazing work results !! Very satisfied and would recommend them 200% Thank You
-        </body>  <meta name="description" content="amazing work service experience results satisfied" /></Helmet></HelmetProvider><body className="description">
-          What a pleasure working with Edgar. Great service very polite such a great experience and amazing work results !! Very satisfied and would recommend them 200% Thank You
-        </body>
+        </p>
       </div>
     ),
     altText: "",
@@ -199,8 +193,17 @@ export default function Home() {
   }, []);
   return (
     <>
+      <Helmet>
+        <title>Solafide Services | Florida Masonry & Stone Specialists</title>
+        <meta name="description" content="Solafide Services — Florida's premier masonry, pavers, pool decks, and stone specialists. Expert craftsmanship for residential and commercial outdoor spaces." />
+        <link rel="canonical" href="https://solafide-services.com/home" />
+        <meta property="og:title" content="Solafide Services | Florida Masonry & Stone Specialists" />
+        <meta property="og:description" content="Expert masonry, interlocking pavers, pool decks, retaining walls, and stonework across Florida." />
+        <meta property="og:url" content="https://solafide-services.com" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <ColorNavbar />
-      <div className="wrapper" ref={wrapper}>
+      <div className="wrapper index-page" ref={wrapper}>
         
         <IndexHeader />
   </div>
@@ -258,310 +261,6 @@ export default function Home() {
            
               </Row>
   </Container>
-<br/>
-<br/>
-
-
-       <Container>
-                <h2 style={{color:'orange'}} className="title text-center">Repairs and Installs</h2>
-                <br />
-                <Row>
-                  <Col md="4">
-                    <Card className="card-profile"  to='/contact-us' tag={Link}>
-                      <div className="card-image">
-                        <h4 className="title">Residential</h4>
-                        {/* <UncontrolledDropdown>
-                          <DropdownToggle
-                            aria-expanded={false}
-                            caret
-                            className="btn-icon"
-                            color="link"
-                            data-toggle="dropdown"
-                            type="button"
-                          >
-                            <i className="tim-icons icon-settings-gear-63" />
-                          </DropdownToggle>
-                          <DropdownMenu right x-placement="bottom-end">
-                            <DropdownItem
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
-                              Edit Profile
-                            </DropdownItem>
-                            <DropdownItem
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
-                              Settings
-                            </DropdownItem>
-                            <DropdownItem
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
-                              Log out
-                            </DropdownItem>
-                          </DropdownMenu>
-                        </UncontrolledDropdown> */}
-                        <a href="/residential" onClick={(e) => e.preventDefault()}>
-                          <img
-                            alt="..."
-                            className="img img-raised rounded"
-                            src={require("assets/img/2.jpg")}
-                          />
-                        </a>
-                      </div>
-                      {/* <CardBody>
-                        <hr className="line-primary" />
-                        <h3 className="job-title">UX Designer</h3>
-                        <Table className="tablesorter" responsive>
-                          <tbody>
-                            <tr>
-                              <td className="text-left">
-                                <i className="tim-icons icon-atom" /> Skills
-                              </td>
-                              <td className="text-right">UI, UX, Creativity</td>
-                            </tr>
-                            <tr>
-                              <td className="text-left">
-                                <i className="tim-icons icon-user-run" /> Hobbies
-                              </td>
-                              <td className="text-right">Photography</td>
-                            </tr>
-                            <tr>
-                              <td className="text-left">
-                                <i className="tim-icons icon-chart-bar-32" />{" "}
-                                Level
-                              </td>
-                              <td className="text-right">• • •</td>
-                            </tr>
-                          </tbody>
-                        </Table>
-                      </CardBody> */}
-                    </Card>
-                  </Col>
-                  <Col md="4">
-                    <Card className="card-profile"  to='/contact-us' tag={Link}>
-                      <div className="card-image">
-                        <h4 className="title">Commercial</h4>
-                        {/* <UncontrolledDropdown>
-                          <DropdownToggle
-                            aria-expanded={false}
-                            caret
-                            className="btn-icon"
-                            color="link"
-                            data-toggle="dropdown"
-                            type="button"
-                          >
-                            <i className="tim-icons icon-settings-gear-63" />
-                          </DropdownToggle>
-                          <DropdownMenu right x-placement="bottom-end">
-                            <DropdownItem
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
-                              Edit Profile
-                            </DropdownItem>
-                            <DropdownItem
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
-                              Settings
-                            </DropdownItem>
-                            <DropdownItem
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
-                              Log out
-                            </DropdownItem>
-                          </DropdownMenu>
-                        </UncontrolledDropdown> */}
-                        <a href="/commercial" onClick={(e) => e.preventDefault()}>
-                          <img
-                            alt="..."
-                            className="img img-raised rounded"
-                            src={require("assets/img/3.jpg")}
-                          />
-                        </a>
-                      </div>
-                      {/* <CardBody>
-                        <hr className="line-primary" />
-                        <h3 className="job-title">Team Lead</h3>
-                        <Table className="tablesorter" responsive>
-                          <tbody>
-                            <tr>
-                              <td className="text-left">
-                                <i className="tim-icons icon-atom" /> Skills
-                              </td>
-                              <td className="text-right">Leadership</td>
-                            </tr>
-                            <tr>
-                              <td className="text-left">
-                                <i className="tim-icons icon-user-run" /> Hobbies
-                              </td>
-                              <td className="text-right">Skiing, Chess</td>
-                            </tr>
-                            <tr>
-                              <td className="text-left">
-                                <i className="tim-icons icon-chart-bar-32" />{" "}
-                                Level
-                              </td>
-                              <td className="text-right">• • • • •</td>
-                            </tr>
-                          </tbody>
-                        </Table>
-                      </CardBody> */}
-                    </Card>
-                  </Col>
-                  <Col md="4">
-                    <Card className="card-profile" to='/contact-us' tag={Link}>
-                      <div className="card-image" >
-                        <h4 className="title">Clean & Seal</h4>
-                        {/* <UncontrolledDropdown>
-                          <DropdownToggle
-                            aria-expanded={false}
-                            caret
-                            className="btn-icon"
-                            color="link"
-                            data-toggle="dropdown"
-                            type="button"
-                          >
-                            <i className="tim-icons icon-settings-gear-63" />
-                          </DropdownToggle>
-                          <DropdownMenu right x-placement="bottom-end">
-                            <DropdownItem
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
-                              Edit Profile
-                            </DropdownItem>
-                            <DropdownItem
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
-                              Settings
-                            </DropdownItem>
-                            <DropdownItem
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
-                              Log out
-                            </DropdownItem>
-                          </DropdownMenu>
-                        </UncontrolledDropdown> */}
-                        <a href="/clean-seal" >
-                          <img
-                            alt="..."
-                            className="img img-raised rounded"
-                            src={require("assets/img/4.jpg")}
-                          />
-                        </a>
-                      </div>
-                      {/* <CardBody>
-                        <hr className="line-primary" />
-                        <h3 className="job-title">Content writer</h3>
-                        <Table className="tablesorter" responsive>
-                          <tbody>
-                            <tr>
-                              <td className="text-left">
-                                <i className="tim-icons icon-atom" /> Skills
-                              </td>
-                              <td className="text-right">Communication</td>
-                            </tr>
-                            <tr>
-                              <td className="text-left">
-                                <i className="tim-icons icon-user-run" /> Hobbies
-                              </td>
-                              <td className="text-right">Reading, Writing</td>
-                            </tr>
-                            <tr>
-                              <td className="text-left">
-                                <i className="tim-icons icon-chart-bar-32" />{" "}
-                                Level
-                              </td>
-                              <td className="text-right">• • • •</td>
-                            </tr>
-                          </tbody>
-                        </Table>
-                      </CardBody> */}
-                    </Card>
-                  </Col>
-                </Row>
-              </Container>
-<br/>
-<br/>
-<br/>
- {/* <Container>
-            <Row className="align-items-center">
-              <Col className="mx-auto" lg="5" md="10" xs="12">
-                <h1 style={{color:'orange'}} className="title">You should contact us!</h1>
-                <p className="description">
-                  Our labor is performed with the utmost attention to detail, providing lasting value and a pleasant experience for our customers.
-                </p>
-                <Row>
-                  <Col className="mb-3" md="12" sm="12">
-                  <Form
-                                   action="https://postmail.invotes.com/send"
-                                    className="p-3"
-                                    id="contact_form"
-                                    method="post"
-                                    role="form"
-                                  >
-                                      <input
-                                        type="hidden"
-                                        name="access_token"
-                                        value="u3i8mym4hhvek1bb4z1p5qqv"
-                                      />
-                                      <input
-                                        type="hidden"
-                                        name="success_url"
-                                        value=".?message=Email+Successfully+Sent%21&isError=0"
-                                      />
-                                      <input
-                                        type="hidden"
-                                        name="error_url"
-                                        value=".?message=Email+could+not+be+sent.&isError=1"
-                                      />
-                                      
-                    <FormGroup>
-                      <Input defaultValue="Full Name" type="text" name="subject" />
-                    </FormGroup>
-                    <FormGroup>
-                      <Input defaultValue="Your Email" type="text" name="text" />
-                    </FormGroup>
-                     <FormGroup>
-                      <Input defaultValue="Message" type="textarea" name="extra_Message" />
-                    </FormGroup>
-                     <div className="submit">
-                      <input
-                        type="hidden"
-                        name="access_token"
-                        value="63yiwt3vt3p7kwh8m7zcdmd0"
-                      />
-                    <Button
-                      className="btn-icon btn-round"
-                      color="info"
-                       id="submit_form"
-                        type="submit"
-                    >
-                      <i className="tim-icons icon-send" />
-                    </Button></div>
-                     </Form>
-                  </Col>
-                </Row>
-
-                   
-
-                  
-               
-              </Col>
-              
-          
-            </Row>
-          </Container> */}
-          <Repairs/>
-<br/>
-<br/>
-<br/>
 
 
   <div className="content-center">

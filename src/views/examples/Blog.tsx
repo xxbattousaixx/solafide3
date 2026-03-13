@@ -125,7 +125,7 @@ const Blog = () => {
       <ColorNavbar />
 
       {/* Hero Section */}
-      <section className="py-16 px-4 bg-gradient-to-b from-primary to-secondary/10">
+      <section className="pb-16 pt-32 px-4 bg-gradient-to-b from-primary to-secondary/10">
         <div className="container mx-auto max-w-4xl text-center">
           <Badge className="mb-4 bg-accent/20 text-accent border-accent/30">
             Latest Insights

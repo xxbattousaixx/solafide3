@@ -131,7 +131,7 @@ export default function BlogPost() {
           <Container>
             <Row>
               <Col className="ml-auto mr-auto text-center" md="8">
-                <h1 style={{color:'gold'}} className="title">Solafide</h1>
+                <h1 style={{color:'orange'}} className="title">Solafide</h1>
                 {/* <div className="author">
                   <img
                     alt="..."

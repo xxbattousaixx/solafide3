@@ -19,7 +19,7 @@ import React from "react";
 // reactstrap components
 import { Container } from "reactstrap";
 
-export default function Index() {
+export default function Home() {
   return (
     <>
       <div className="page-header">
@@ -32,7 +32,7 @@ export default function Index() {
         <div className="squares square7" />
         <Container>
           <div className="content-center brand">
-            <h1 style={{color:'gold'}} className="h1-seo">Solafide• Services</h1>
+            <h1 style={{color:'orange'}} className="h1-seo">Solafide• Services</h1>
             <h2>A professional masonry - stone - concrete company</h2>
             <h3>'Trained professionals, Exceptional Results, Sensible Investment.'</h3>
           </div>

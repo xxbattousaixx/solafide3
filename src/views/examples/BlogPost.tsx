@@ -52,7 +52,7 @@ const blogPostsContent: Record<string, BlogPostContent> = {
     category: "Lighting",
     date: "2025-01-05",
     readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=1200&h=600&fit=crop&q=80",
+    image: "https://cdn.mos.cms.futurecdn.net/s8aH66vsWqK8TXs5L7GvuQ-1024-80.jpg?w=1200&h=600&fit=crop&q=80",
     content: [
       "Professional outdoor lighting transforms your property after sunset, enhancing both beauty and functionality. A well-designed lighting system highlights architectural features, improves safety, and extends your outdoor living hours.",
       "Strategic placement is everything. Path lighting ensures safe navigation while creating ambiance. Uplighting showcases trees, stone walls, and architectural elements. Downlighting from trees or structures provides moonlight-like illumination for patios and gathering spaces.",
@@ -140,7 +140,7 @@ const BlogPost = () => {
       "name": "Solafide Services",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://solafide-services.com/logo.png"
+        "url": "https://solafide-services.com/favicon-96x96.png"
       }
     },
     "description": post.content[0],
@@ -204,9 +204,7 @@ const BlogPost = () => {
             <Link to="/" className="text-card-foreground hover:text-accent transition-colors">
               Home
             </Link>
-            <Link to="/blog" className="text-card-foreground hover:text-accent transition-colors">
-              Blog
-            </Link>
+           
           </nav>
         </div>
       </header>
@@ -264,9 +262,9 @@ const BlogPost = () => {
 
           <div className="prose prose-lg max-w-none" itemProp="articleBody">
             {post.content.map((paragraph, index) => (
-              <h1 key={index} className="mb-6 text-card-foreground leading-relaxed">
+              <h5 key={index} className="mb-6 text-card-foreground leading-relaxed">
                 {paragraph}
-              </h1>
+              </h5>
             ))}
           </div>
 

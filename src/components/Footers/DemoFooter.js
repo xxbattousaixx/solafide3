@@ -21,12 +21,12 @@ export default function DemoFooter() {
         <Container>
           <Row>
             <Col md="3">
-              <h1 style={{color:'gold'}} className="title">Solafide• Services</h1>
+              <h1 style={{color:'orange'}} className="title">Solafide• Services</h1>
             </Col>
             <Col md="3" xs="6">
               <Nav>
                 <NavItem>
-                  <NavLink to="/index" tag={Link}>
+                  <NavLink to="/home" tag={Link}>
                     Home
                   </NavLink>
                 </NavItem>
@@ -60,10 +60,10 @@ export default function DemoFooter() {
                 </NavItem>
                 <NavItem>
                   <NavLink
-                    to="/contact-us"
+                    to="/privacy-policy"
                     tag={Link}
                   >
-                    Contact Us
+                    Privacy Policy
                   </NavLink>
                 </NavItem>
              <NavItem>
@@ -73,10 +73,8 @@ export default function DemoFooter() {
                 </NavItem>
                 <NavItem>
                   <NavLink
-                    href="https://opensource.org/licenses/MIT?ref=blkdspr-footer"
-                    target="_blank"
-                  >
-                    License
+                    to="/contact-us" tag={Link}>
+                    Contact Us
                   </NavLink>
                 </NavItem>
               </Nav>

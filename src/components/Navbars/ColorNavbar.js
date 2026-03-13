@@ -14,8 +14,6 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import Logo2 from "assets/img/ss3logo2.png"
-import Logo from "assets/img/ss3logo.png"
 
 import React from "react";
 import { Link } from "react-router-dom";
@@ -36,6 +34,8 @@ import {
   Col,
   UncontrolledTooltip,
 } from "reactstrap";
+import Logo2 from "assets/img/ss3logo2.png"
+import Logo from "assets/img/ss3logo.png"
 
 
 
@@ -67,14 +67,14 @@ export default function ColorNavbar() {
 
         <Container>
           <div className="navbar-translate">
-          <NavbarBrand to="/index" tag={Link} >
+          <NavbarBrand to="/home" tag={Link} >
               <span>Solafide•</span> Services
               &emsp;
               <img src={Logo} alt="logo"/>
 
             </NavbarBrand>
             {/* <UncontrolledTooltip delay={0} target="tooltip6619950104">
-              Designed and Coded by Creative Tim
+              Designed and Coded by DC7
             </UncontrolledTooltip> */}
             <button className="navbar-toggler" id="navigation">
               <span className="navbar-toggler-bar bar1" />
@@ -243,7 +243,7 @@ Gallery             </DropdownToggle>
 
                 </Button>
                 <UncontrolledTooltip delay={0} target="tooltip6619950104">
-              Any questions? Call us now. 
+              Any questions? Call us now at 941.518.1657
               
 
 

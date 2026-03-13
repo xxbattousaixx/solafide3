@@ -39,7 +39,7 @@ const blogPosts: BlogPost[] = [
     category: "Lighting",
     date: "2025-01-05",
     readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&h=500&fit=crop&q=80"
+    image: "https://cdn.mos.cms.futurecdn.net/s8aH66vsWqK8TXs5L7GvuQ-1024-80.jpg?w=1200&h=600&fit=crop&q=80"
   },
   {
     id: "residential-vs-commercial",
@@ -82,7 +82,7 @@ const Blog = () => {
       "name": "Solafide Services",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://solafide-services.com/logo.png"
+        "url": "https://solafide-services.com/favicon-96x96.png"
       }
     },
     "blogPost": blogPosts.map(post => ({
@@ -119,7 +119,7 @@ const Blog = () => {
         ]}
         structuredData={structuredData}
       />
-      <div className="min-h-screen bg-primary dark:bg-primary">
+      <div className="min-h-screen black dark:black">
       {/* Header */}
       <header className="border-b border-border/20 bg-card/50 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -153,7 +153,7 @@ const Blog = () => {
 
       {/* Blog Grid */}
       <main className="py-16 px-4">
-        <div className="container mx-auto max-w-6xl">
+        <div className="container mx-auto max-w-6xl bg-primary">
           <h2 className="sr-only">Latest Masonry and Design Articles</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post) => (

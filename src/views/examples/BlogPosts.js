@@ -158,7 +158,7 @@ export default function BlogPosts() {
           <div className="content-center">
             <Row>
               <Col className="ml-auto mr-auto text-center" md="6">
-                <h1 style={{color:'gold'}} className="title">
+                <h1 style={{color:'orange'}} className="title">
                   Renovate your home with Solafide
                 </h1>
                 <Button

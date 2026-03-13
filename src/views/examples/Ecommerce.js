@@ -102,7 +102,7 @@ export default function Ecommerce() {
             <Container>
               <Row>
                 <Col className="mr-auto text-left" lg="6" md="7">
-                  <h1 style={{color:'gold'}} className="title">Pressure Washing</h1>
+                  <h1 style={{color:'orange'}} className="title">Pressure Washing</h1>
                   <br />
                   {/* <div className="buttons">
                     <Button

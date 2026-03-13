@@ -22,7 +22,6 @@ import React from "react";
 // } from "reactstrap";
 
 // core components
-import DemoFooter from "components/Footers/DemoFooter.js";
 
 // Sections for this page
 // (we've divided this page into multiple react components to make it a bit more readable)
@@ -68,7 +67,6 @@ export default function Sections() {
         {/* <Accordion /> */}
         {/* Sections END */}
         {/* Footer */}
-        <DemoFooter />
       </div>
     </>
   );

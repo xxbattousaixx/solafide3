@@ -24,6 +24,7 @@ import {
   Row,
   Col,
 } from "reactstrap";
+import DemoFooter from "components/Footers/DemoFooter.js";
 
 // core components
 import ColorNavbar from "components/Navbars/ColorNavbar.js";
@@ -78,9 +79,9 @@ export default function LandingPage() {
           <Container>
             <Row className="row-grid justify-content-between align-items-center text-left">
               <Col lg="6" md="6">
-                <h1 style={{color:'gold'}}>
+                <h1 style={{color:'orange'}}>
                   Building your dream  <br />
-                  <span style={{color:'gold'}}>landscape</span>
+                  <span style={{color:'orange'}}>landscape</span>
                 </h1>
                 <p className="text-white mb-3">
                   Completely redesign your home oasis with our custom landscapes.
@@ -574,9 +575,9 @@ export default function LandingPage() {
             </Row>
           </Container>
         </section> */}
-        {/* <DemoFooter /> */}
+        
           <Sections/>
-
+<DemoFooter />
       </div>
     </>
   );

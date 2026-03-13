@@ -7,14 +7,13 @@ import {Helmet, HelmetProvider} from "react-helmet-async";
 import {
   Button,
   Form,
-  FormGroup,
   Input,
+  InputGroup,
   Container,
   Row,
   Col,
   Card, 
   CardBody,
-  CardTitle
 } from "reactstrap";
 
 // core components
@@ -83,7 +82,7 @@ export default function AboutUs() {
                 <Col className="ml-auto mr-auto" lg="6" md="8" xs="12">
                   <h1 className="title">
                      <br />
-                    <strong style={{color:'gold'}} >Solafide</strong>
+                    <strong style={{color:'orange'}} >Solafide</strong>
                   </h1>
                 <HelmetProvider>  <Helmet>
                     Solafide Services is dedicated to enhancing the beauty of Florida'ss residential and commercial outdoors. Edgar and his team of experts specialize in crafting breathtaking waterfalls, durable stone decks, elegant concrete landscape curbing, inviting gazebos, cozy fire pits, and a wide array of other outdoor stone, concrete, paver features. The name "Solafide," meaning "by faith alone," reflects Edgar's deep-rooted faith and the principles of integrity and trust that guide his business. 
@@ -244,7 +243,7 @@ export default function AboutUs() {
           <Container>
             <Row className="mb-5">
               <Col className="ml-auto mr-auto text-center" md="8">
-                <h2 style={{color:'gold'}} className="title">Specialized in Masonry</h2>
+                <h2 style={{color:'orange'}} className="title">Specialized in Masonry</h2>
                 <h4 className="description">
                   Dedicatedly performing artisanal work in the state of Florida -- we provide residential and commercial services.
                 </h4>
@@ -265,7 +264,7 @@ export default function AboutUs() {
           <Container>
             <Row className="align-items-center">
               <Col className="mx-auto" lg="5" md="10" xs="12">
-                <h1 style={{color:'gold'}} className="title">You should contact us!</h1>
+                <h1 style={{color:'orange'}} className="title">You should contact us!</h1>
                 <p className="description">
                   Our labor is performed with the utmost attention to detail, providing lasting value and a pleasant experience for our customers.
                 </p>
@@ -294,15 +293,15 @@ export default function AboutUs() {
                                                       value=".?message=Email+could+not+be+sent.&isError=1"
                                                     />
                                                     
-                                  <FormGroup>
+                                  <InputGroup>
                                     <Input defaultValue="Full Name" type="text" name="subject" />
-                                  </FormGroup>
-                                  <FormGroup>
+                                  </InputGroup>
+                                  <InputGroup>
                                     <Input defaultValue="Your Email" type="text" name="text" />
-                                  </FormGroup>
-                                   <FormGroup>
+                                  </InputGroup>
+                                   <InputGroup>
                                     <Input defaultValue="Message" type="textarea" name="extra_Message" />
-                                  </FormGroup>
+                                  </InputGroup>
                                    <div className="submit">
                                     <input
                                       type="hidden"
@@ -322,7 +321,7 @@ export default function AboutUs() {
                               </Row>
               </Col>
           <Col className="mx-auto" lg="5" md="10" xs="12">
-                <h1 style={{color:'gold'}} className="title">Solafide Paver Sealer</h1>
+                <h1 style={{color:'orange'}} className="title">Solafide Paver Sealer</h1>
                 <p className="description">
                   House product you can purchase for personal use
                 </p>

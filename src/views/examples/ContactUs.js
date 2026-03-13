@@ -26,7 +26,6 @@ import {
   FormGroup,
   Form,
   Input,
-  InputGroupAddon,
   InputGroupText,
   InputGroup,
   Container,
@@ -340,11 +339,11 @@ export default function ContactUs() {
                             "input-group-focus": firstNameFocus,
                           })}
                         >
-                          <InputGroupAddon addonType="prepend">
+                          {/* <InputGroupAddon addonType="prepend"> */}
                             <InputGroupText>
                               <i className="tim-icons icon-single-02" />
                             </InputGroupText>
-                          </InputGroupAddon>
+                          {/* </InputGroupAddon> */}
                           <Input
                             aria-label="Full Name..."
                             placeholder="Full Name..."
@@ -386,11 +385,11 @@ export default function ContactUs() {
                           "input-group-focus": emailFocus,
                         })}
                       >
-                        <InputGroupAddon addonType="prepend">
+                        {/* <InputGroupAddon addonType="prepend"> */}
                           <InputGroupText>
                             <i className="tim-icons icon-email-85" />
                           </InputGroupText>
-                        </InputGroupAddon>
+                        {/* </InputGroupAddon> */}
                         <Input
                           placeholder="Email Here..."
                           type="text"

@@ -1,4 +1,4 @@
-import {Helmet, HelmetProvider} from "react-helmet-async";
+import {Helmet} from "react-helmet-async";
 
 interface SEOProps {
   title: string;
@@ -31,7 +31,6 @@ export const SEO = ({
   const fullUrl = url.startsWith("http") ? url : `https://solafide-services.com${url}`;
 
   return (
-    <HelmetProvider>
     <Helmet>
       {/* Primary Meta Tags */}
       <title>{fullTitle}</title>
@@ -76,6 +75,6 @@ export const SEO = ({
           {JSON.stringify(structuredData)}
         </script>
       )}
-    </Helmet></HelmetProvider>
+    </Helmet>
   );
 };

@@ -233,13 +233,9 @@ export default function ColorNavbar() {
                 </DropdownMenu>
               </UncontrolledDropdown> */}
               <NavItem>
-                <Button to="/contact-us" tag={Link}>
-                <img  style={{
-                    height:
-                      "80px", width:"80px"
-
-                  }} id="tooltip6619950104" src= {Logo2} alt="logo2" ></img>
-
+                <Button to="/contact-us" tag={Link} style={{ display: 'flex', alignItems: 'center', gap: '8px', background: 'transparent', border: 'none', padding: '0 8px' }}>
+                  <span style={{ color: '#f96332', fontWeight: 700, fontSize: '0.95rem', whiteSpace: 'nowrap', letterSpacing: '0.02em' }}>Contact us now!</span>
+                  <img style={{ height: "70px", width: "70px" }} id="tooltip6619950104" src={Logo2} alt="logo2" />
                 </Button>
                 <UncontrolledTooltip delay={0} target="tooltip6619950104">
               Any questions? Call us now at 941.518.1657

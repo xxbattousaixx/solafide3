@@ -86,15 +86,20 @@ export default function ColorNavbar() {
           <UncontrolledCollapse navbar toggler="#navigation">
             <div className="navbar-collapse-header">
               <Row>
-                <Col className="collapse-brand" xs="6">
+                <Col className="collapse-brand" xs="5">
                   <a href="#pablo" onClick={(e) => e.preventDefault()}>
                     Solafide <span>Services</span>
                   </a>
-
-                  
                 </Col>
-
-                <Col className="collapse-close text-right" xs="6">
+                <Col xs="4" className="d-flex align-items-center justify-content-center">
+                  <Link
+                    to="/contact-us"
+                    style={{ color: '#f96332', fontWeight: 700, fontSize: '0.82rem', whiteSpace: 'nowrap', textDecoration: 'none' }}
+                  >
+                    Contact us now!
+                  </Link>
+                </Col>
+                <Col className="collapse-close text-right" xs="3">
                   <button className="navbar-toggler" id="navigation">
                     <i className="tim-icons icon-simple-remove" />
                   </button>
@@ -232,7 +237,7 @@ export default function ColorNavbar() {
                   </UncontrolledDropdown>
                 </DropdownMenu>
               </UncontrolledDropdown> */}
-              <NavItem>
+              <NavItem className="d-none d-lg-flex align-items-center">
                 <Button to="/contact-us" tag={Link} style={{ display: 'flex', alignItems: 'center', gap: '8px', background: 'transparent', border: 'none', padding: '0 8px' }}>
                   <span style={{ color: '#f96332', fontWeight: 700, fontSize: '0.95rem', whiteSpace: 'nowrap', letterSpacing: '0.02em' }}>Contact us now!</span>
                   <img style={{ height: "70px", width: "70px" }} id="tooltip6619950104" src={Logo2} alt="logo2" />

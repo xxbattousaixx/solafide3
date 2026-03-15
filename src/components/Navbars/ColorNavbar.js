@@ -87,9 +87,9 @@ export default function ColorNavbar() {
             <div className="navbar-collapse-header">
               <Row>
                 <Col className="collapse-brand" xs="5">
-                  <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                    Solafide <span>Services</span>
-                  </a>
+                  <Link to="/home" style={{ display: 'flex', alignItems: 'center', gap: '6px', textDecoration: 'none' }}>
+                    <img src={Logo2} alt="Solafide Services" style={{ height: '46px', width: '46px' }} />
+                  </Link>
                 </Col>
                 <Col xs="4" className="d-flex align-items-center justify-content-center">
                   <Link

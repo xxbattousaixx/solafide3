@@ -1,584 +1,275 @@
-/*!
-
-=========================================================
-* BLK Design System PRO React - v1.2.2
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/blk-design-system-pro-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-import React from "react";
-// react plugin used to create charts
-
-// reactstrap components
-import {
-  Button,
-  Container,
-  Row,
-  Col,
-} from "reactstrap";
+import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
+import ColorNavbar from "components/Navbars/ColorNavbar.js";
 import DemoFooter from "components/Footers/DemoFooter.js";
 
-// core components
-import ColorNavbar from "components/Navbars/ColorNavbar.js";
-import Sections from "views/Sections";
+const IMAGES = [
+  { src: require("assets/img/waterfall.JPG"),  label: "Custom Waterfall",     category: "Water Features" },
+  { src: require("assets/img/11.jpg"),          label: "Paver Project",        category: "Hardscape" },
+  { src: require("assets/img/22.jpg"),          label: "Completed Project",    category: "Hardscape" },
+  { src: require("assets/img/a.jpg"),           label: "Outdoor Lighting",     category: "Lighting" },
+  { src: require("assets/img/a1.jpg"),          label: "",                     category: "Hardscape" },
+  { src: require("assets/img/a3.jpg"),          label: "",                     category: "Hardscape" },
+  { src: require("assets/img/a5.jpg"),          label: "",                     category: "Hardscape" },
+  { src: require("assets/img/a8.jpg"),          label: "",                     category: "Hardscape" },
+  { src: require("assets/img/a9.jpg"),          label: "",                     category: "Hardscape" },
+  { src: require("assets/img/b.jpg"),           label: "",                     category: "Hardscape" },
+  { src: require("assets/img/b4.jpg"),          label: "",                     category: "Hardscape" },
+  { src: require("assets/img/b5.jpg"),          label: "",                     category: "Hardscape" },
+  { src: require("assets/img/c.JPG"),           label: "Retaining Wall",       category: "Masonry" },
+  { src: require("assets/img/1130.jpg"),        label: "Concrete Curbing",     category: "Concrete" },
+  { src: require("assets/img/driveway7.jpg"),   label: "Driveway",             category: "Driveways" },
+  { src: require("assets/img/d3.jpg"),          label: "",                     category: "Hardscape" },
+  { src: require("assets/img/d5.jpg"),          label: "",                     category: "Hardscape" },
+  { src: require("assets/img/d8.jpg"),          label: "",                     category: "Hardscape" },
+  { src: require("assets/img/1.jpg"),           label: "",                     category: "Hardscape" },
+  { src: require("assets/img/2.jpg"),           label: "",                     category: "Hardscape" },
+  { src: require("assets/img/3.jpg"),           label: "",                     category: "Hardscape" },
+  { src: require("assets/img/4.jpg"),           label: "",                     category: "Hardscape" },
+  { src: require("assets/img/5.jpg"),           label: "",                     category: "Hardscape" },
+  { src: require("assets/img/6.jpg"),           label: "",                     category: "Hardscape" },
+  { src: require("assets/img/8.jpg"),           label: "",                     category: "Hardscape" },
+  { src: require("assets/img/33.jpg"),          label: "",                     category: "Hardscape" },
+  { src: require("assets/img/44.jpg"),          label: "",                     category: "Hardscape" },
+  { src: require("assets/img/jj.jpg"),          label: "",                     category: "Hardscape" },
+  { src: require("assets/img/kkk.jpg"),         label: "",                     category: "Hardscape" },
+  { src: require("assets/img/mmm.jpg"),         label: "",                     category: "Hardscape" },
+  { src: require("assets/img/p10.jpg"),         label: "",                     category: "Hardscape" },
+];
 
-export default function LandingPage() {
-  const wrapper = React.useRef(null);
+const CATS = ["All", "Hardscape", "Driveways", "Water Features", "Masonry", "Concrete", "Lighting"];
+
+const ACCENT = "#f96332";
+const NAV_BG = "#1b1b3a";
+
+export default function Gallery() {
+  const [filter, setFilter]     = useState("All");
+  const [lightbox, setLightbox] = useState(null);
+  const [hoveredIdx, setHoveredIdx] = useState(null);
+
+  const filtered = filter === "All" ? IMAGES : IMAGES.filter(i => i.category === filter);
+
+  const prev = (e) => { e.stopPropagation(); setLightbox(l => (l > 0 ? l - 1 : filtered.length - 1)); };
+  const next = (e) => { e.stopPropagation(); setLightbox(l => (l < filtered.length - 1 ? l + 1 : 0)); };
+
+  const handleKeyDown = React.useCallback((e) => {
+    if (lightbox === null) return;
+    if (e.key === "ArrowLeft")  setLightbox(l => (l > 0 ? l - 1 : filtered.length - 1));
+    if (e.key === "ArrowRight") setLightbox(l => (l < filtered.length - 1 ? l + 1 : 0));
+    if (e.key === "Escape")     setLightbox(null);
+  }, [lightbox, filtered.length]);
+
   React.useEffect(() => {
-    document.documentElement.scrollTop = 0;
-    document.scrollingElement.scrollTop = 0;
-    wrapper.current.scrollTop = 0;
-    document.body.classList.add("landing-page");
-    return function cleanup() {
-      document.body.classList.remove("landing-page");
-    };
-  }, []);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [handleKeyDown]);
+
   return (
     <>
+      <Helmet>
+        <title>Gallery | Solafide Services — Florida Masonry & Hardscape Portfolio</title>
+        <meta name="description" content="Browse Solafide Services' project gallery. Custom driveways, retaining walls, waterfall features, outdoor lighting, and masonry work across Florida." />
+        <link rel="canonical" href="https://solafide-services.com/gallery" />
+      </Helmet>
+
       <ColorNavbar />
-      <div className="wrapper" ref={wrapper}>
-        <div className="page-header">
-          <img
-            alt="..."
-            className="path"
-            src={require("assets/img/blob.png")}
-          />
-          <img
-            alt="..."
-            className="path2"
-            src={require("assets/img/path2.png")}
-          />
-          <img
-            alt="..."
-            className="shapes triangle"
-            src={require("assets/img/triunghiuri.png")}
-          />
-          <img
-            alt="..."
-            className="shapes wave"
-            src={require("assets/img/waves.png")}
-          />
-          <img
-            alt="..."
-            className="shapes squares"
-            src={require("assets/img/patrat.png")}
-          />
-          <img
-            alt="..."
-            className="shapes circle"
-            src={require("assets/img/cercuri.png")}
-          />
-          <Container>
-            <Row className="row-grid justify-content-between align-items-center text-left">
-              <Col lg="6" md="6">
-                <h1 style={{color:'orange'}}>
-                  Building your dream  <br />
-                  <span style={{color:'orange'}}>landscape</span>
-                </h1>
-                <p className="text-white mb-3">
-                  Completely redesign your home oasis with our custom landscapes.
-                </p>
-                <div className="btn-wrapper mb-3">
-                  {/* <p className="category text-success d-inline">
-                    From 9.99%/mo
-                  </p> */}
-                  {/* <Button
-                    className="btn-link"
-                    color="success"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                    size="sm"
-                  >
-                    <i className="tim-icons icon-minimal-right" />
-                  </Button> */}
-                </div>
-                <div className="btn-wrapper">
-                  <div className="button-container">
-                    <Button
-                      className="btn-icon btn-simple btn-round mr-1"
-                      color="neutral"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <i className="fab fa-instagram" />
-                    </Button>
-                    <Button
-                      className="btn-icon btn-simple btn-round mr-1"
-                      color="neutral"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <i className="fab fa-tiktok" />
-                    </Button>
-                    <Button
-                      className="btn-icon btn-simple btn-round"
-                      color="neutral"
-                      href="https://www.facebook.com/SolafideL7/"
-                    >
-                      <i className="fab fa-facebook" />
-                    </Button>
-                  </div>
-                </div>
-              </Col>
-              <Col lg="4" md="5">
-                <img
-                  alt="..."
-                  className="img-fluid"
-                  src={require("assets/img/waterfall.JPG")}
-                />
-              </Col>
-            </Row>
-          </Container>
+
+      <div style={{ background: NAV_BG, minHeight: "100vh", marginTop: "130px" }}>
+
+        {/* ── Hero ── */}
+        <div style={{ textAlign: "center", padding: "64px 20px 0" }}>
+          <span style={{
+            color: ACCENT, fontSize: "0.78rem", fontWeight: 700,
+            letterSpacing: "0.18em", textTransform: "uppercase",
+            display: "inline-block", marginBottom: "12px",
+          }}>
+            Portfolio
+          </span>
+          <h1 style={{
+            color: "#fff", margin: "0 0 14px",
+            fontSize: "clamp(2rem, 5vw, 3.6rem)", fontWeight: 800, lineHeight: 1.15,
+          }}>
+            Crafted with{" "}
+            <span style={{ color: ACCENT }}>Precision</span>
+          </h1>
+          <p style={{
+            color: "rgba(255,255,255,0.55)", maxWidth: "520px",
+            margin: "0 auto 40px", fontSize: "1.05rem", lineHeight: 1.7,
+          }}>
+            Every project tells a story — browse our portfolio of masonry, hardscaping,
+            and outdoor transformations across Florida.
+          </p>
+
+          {/* Filter pills */}
+          <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", justifyContent: "center", marginBottom: "48px" }}>
+            {CATS.map(cat => {
+              const active = filter === cat;
+              return (
+                <button key={cat} onClick={() => setFilter(cat)} style={{
+                  padding: "8px 22px", borderRadius: "24px", cursor: "pointer",
+                  border: `2px solid ${active ? ACCENT : "rgba(255,255,255,0.18)"}`,
+                  background: active ? ACCENT : "transparent",
+                  color: active ? "#fff" : "rgba(255,255,255,0.65)",
+                  fontWeight: 600, fontSize: "0.82rem", letterSpacing: "0.04em",
+                  transition: "all 0.2s ease", outline: "none",
+                }}>
+                  {cat}
+                </button>
+              );
+            })}
+          </div>
         </div>
-        {/* <section className="section section-lg">
-          <section className="section">
-            <img
-              alt="..."
-              className="path"
-              src={require("assets/img/path4.png")}
-            />
-            <Container>
-              <Row className="row-grid justify-content-between">
-                <Col className="mt-lg-5" md="5">
-                  <Row>
-                    <Col className="px-2 py-2" lg="6" sm="12">
-                      <Card className="card-stats">
-                        <CardBody>
-                          <Row>
-                            <Col md="4" xs="5">
-                              <div className="icon-big text-center icon-warning">
-                                <i className="tim-icons icon-trophy text-warning" />
-                              </div>
-                            </Col>
-                            <Col md="8" xs="7">
-                              <div className="numbers">
-                                <CardTitle tag="p">3,237</CardTitle>
-                                <p />
-                                <p className="card-category">Awards</p>
-                              </div>
-                            </Col>
-                          </Row>
-                        </CardBody>
-                      </Card>
-                    </Col>
-                    <Col className="px-2 py-2" lg="6" sm="12">
-                      <Card className="card-stats upper bg-default">
-                        <CardBody>
-                          <Row>
-                            <Col md="4" xs="5">
-                              <div className="icon-big text-center icon-warning">
-                                <i className="tim-icons icon-coins text-white" />
-                              </div>
-                            </Col>
-                            <Col md="8" xs="7">
-                              <div className="numbers">
-                                <CardTitle tag="p">3,653</CardTitle>
-                                <p />
-                                <p className="card-category">Commits</p>
-                              </div>
-                            </Col>
-                          </Row>
-                        </CardBody>
-                      </Card>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col className="px-2 py-2" lg="6" sm="12">
-                      <Card className="card-stats">
-                        <CardBody>
-                          <Row>
-                            <Col md="4" xs="5">
-                              <div className="icon-big text-center icon-warning">
-                                <i className="tim-icons icon-gift-2 text-info" />
-                              </div>
-                            </Col>
-                            <Col md="8" xs="7">
-                              <div className="numbers">
-                                <CardTitle tag="p">593</CardTitle>
-                                <p />
-                                <p className="card-category">Presents</p>
-                              </div>
-                            </Col>
-                          </Row>
-                        </CardBody>
-                      </Card>
-                    </Col>
-                    <Col className="px-2 py-2" lg="6" sm="12">
-                      <Card className="card-stats">
-                        <CardBody>
-                          <Row>
-                            <Col md="4" xs="5">
-                              <div className="icon-big text-center icon-warning">
-                                <i className="tim-icons icon-credit-card text-success" />
-                              </div>
-                            </Col>
-                            <Col md="8" xs="7">
-                              <div className="numbers">
-                                <CardTitle tag="p">10,783</CardTitle>
-                                <p />
-                                <p className="card-category">Forks</p>
-                              </div>
-                            </Col>
-                          </Row>
-                        </CardBody>
-                      </Card>
-                    </Col>
-                  </Row>
-                </Col>
-                <Col md="6">
-                  <div className="pl-md-5">
-                    <h1>
-                      Large <br />
-                      Achivements
-                    </h1>
-                    <p>
-                      I should be capable of drawing a single stroke at the
-                      present moment; and yet I feel that I never was a greater
-                      artist than now.
+
+        {/* ── Masonry Grid ── */}
+        <div style={{
+          padding: "0 16px 80px",
+          maxWidth: "1280px",
+          margin: "0 auto",
+          columns: "3 280px",
+          columnGap: "14px",
+        }}>
+          {filtered.map((img, idx) => (
+            <div
+              key={img.src + idx}
+              onClick={() => setLightbox(idx)}
+              onMouseEnter={() => setHoveredIdx(idx)}
+              onMouseLeave={() => setHoveredIdx(null)}
+              style={{
+                breakInside: "avoid",
+                marginBottom: "14px",
+                borderRadius: "10px",
+                overflow: "hidden",
+                position: "relative",
+                cursor: "zoom-in",
+                boxShadow: hoveredIdx === idx
+                  ? "0 12px 40px rgba(249,99,50,0.35)"
+                  : "0 4px 20px rgba(0,0,0,0.4)",
+                transition: "box-shadow 0.3s ease, transform 0.3s ease",
+                transform: hoveredIdx === idx ? "translateY(-3px)" : "none",
+              }}
+            >
+              <img
+                src={img.src}
+                alt={img.label || "Solafide Services project"}
+                loading="lazy"
+                style={{
+                  width: "100%",
+                  display: "block",
+                  transition: "transform 0.4s ease",
+                  transform: hoveredIdx === idx ? "scale(1.04)" : "scale(1)",
+                }}
+              />
+              {/* Hover overlay */}
+              <div style={{
+                position: "absolute", inset: 0,
+                background: "linear-gradient(to top, rgba(249,99,50,0.75) 0%, rgba(27,27,58,0.15) 55%, transparent 100%)",
+                opacity: hoveredIdx === idx ? 1 : 0,
+                transition: "opacity 0.3s ease",
+                display: "flex", alignItems: "flex-end", padding: "16px 14px",
+              }}>
+                <div>
+                  {img.label && (
+                    <p style={{ color: "#fff", fontWeight: 700, fontSize: "0.9rem", margin: "0 0 2px" }}>
+                      {img.label}
                     </p>
-                    <br />
-                    <p>
-                      When, while the lovely valley teems with vapour around me,
-                      and the meridian sun strikes the upper surface of the
-                      impenetrable foliage of my trees, and but a few stray.
-                    </p>
-                    <br />
-                    <a
-                      className="font-weight-bold text-info mt-5"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      Show all{" "}
-                      <i className="tim-icons icon-minimal-right text-info" />
-                    </a>
-                  </div>
-                </Col>
-              </Row>
-            </Container>
-          </section>
-        </section>
-        <section className="section section-lg">
-          <img
-            alt="..."
-            className="path"
-            src={require("assets/img/path4.png")}
-          />
-          <img
-            alt="..."
-            className="path2"
-            src={require("assets/img/path5.png")}
-          />
-          <img
-            alt="..."
-            className="path3"
-            src={require("assets/img/path2.png")}
-          />
-          <Container>
-            <Row className="justify-content-center">
-              <Col lg="12">
-                <h1 className="text-center">Your best benefit</h1>
-                <Row className="row-grid justify-content-center">
-                  <Col lg="3">
-                    <div className="info">
-                      <div className="icon icon-primary">
-                        <i className="tim-icons icon-money-coins" />
-                      </div>
-                      <h4 className="info-title">Low Commission</h4>
-                      <hr className="line-primary" />
-                      <p>
-                        Divide details about your work into parts. Write a few
-                        lines about each one. A paragraph describing a feature
-                        will.
-                      </p>
-                    </div>
-                  </Col>
-                  <Col lg="3">
-                    <div className="info">
-                      <div className="icon icon-warning">
-                        <i className="tim-icons icon-chart-pie-36" />
-                      </div>
-                      <h4 className="info-title">High Incomes</h4>
-                      <hr className="line-warning" />
-                      <p>
-                        Divide details about your product or agency work into
-                        parts. Write a few lines about each one. A paragraph
-                        describing feature will be a feature.
-                      </p>
-                    </div>
-                  </Col>
-                  <Col lg="3">
-                    <div className="info">
-                      <div className="icon icon-success">
-                        <i className="tim-icons icon-single-02" />
-                      </div>
-                      <h4 className="info-title">Verified People</h4>
-                      <hr className="line-success" />
-                      <p>
-                        Divide details about your product or agency work into
-                        parts. Write a few lines about each one. A paragraph
-                        describing be enough.
-                      </p>
-                    </div>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-          </Container>
-        </section>
-        <section className="section section-lg section-safe">
-          <img
-            alt="..."
-            className="path"
-            src={require("assets/img/path5.png")}
-          />
-          <Container>
-            <Row className="row-grid justify-content-between">
-              <Col md="5">
-                <img
-                  alt="..."
-                  className="img-fluid floating"
-                  src={require("assets/img/chester-wade.jpg")}
-                />
-                <Card className="card-stats bg-danger">
-                  <CardBody>
-                    <div className="justify-content-center">
-                      <div className="numbers">
-                        <CardTitle tag="p">100%</CardTitle>
-                        <p className="card-category text-white">Safe</p>
-                      </div>
-                    </div>
-                  </CardBody>
-                </Card>
-                <Card className="card-stats bg-info">
-                  <CardBody>
-                    <div className="justify-content-center">
-                      <div className="numbers">
-                        <CardTitle tag="p">573 K</CardTitle>
-                        <p className="card-category text-white">
-                          Satisfied customers
-                        </p>
-                      </div>
-                    </div>
-                  </CardBody>
-                </Card>
-                <Card className="card-stats bg-default">
-                  <CardBody>
-                    <div className="justify-content-center">
-                      <div className="numbers">
-                        <CardTitle tag="p">10 425</CardTitle>
-                        <p className="card-category text-white">Business</p>
-                      </div>
-                    </div>
-                  </CardBody>
-                </Card>
-              </Col>
-              <Col md="6">
-                <div className="px-md-5">
-                  <hr className="line-success" />
-                  <h3>Awesome features</h3>
-                  <p>
-                    The design system comes with three pre-built pages to help
-                    you get started faster. You can change the text and images
-                    and you're good to go.
+                  )}
+                  <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "0.75rem", margin: 0, letterSpacing: "0.06em", textTransform: "uppercase" }}>
+                    {img.category}
                   </p>
-                  <ul className="list-unstyled mt-5">
-                    <li className="py-2">
-                      <div className="d-flex align-items-center">
-                        <div className="icon icon-success mb-2">
-                          <i className="tim-icons icon-vector" />
-                        </div>
-                        <div className="ml-3">
-                          <h6>Carefully crafted components</h6>
-                        </div>
-                      </div>
-                    </li>
-                    <li className="py-2">
-                      <div className="d-flex align-items-center">
-                        <div className="icon icon-success mb-2">
-                          <i className="tim-icons icon-tap-02" />
-                        </div>
-                        <div className="ml-3">
-                          <h6>Amazing page examples</h6>
-                        </div>
-                      </div>
-                    </li>
-                    <li className="py-2">
-                      <div className="d-flex align-items-center">
-                        <div className="icon icon-success mb-2">
-                          <i className="tim-icons icon-single-02" />
-                        </div>
-                        <div className="ml-3">
-                          <h6>Super friendly support team</h6>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
                 </div>
-              </Col>
-            </Row>
-          </Container>
-        </section>
-        <section className="section section-lg">
-          <img
-            alt="..."
-            className="path"
-            src={require("assets/img/path4.png")}
-          />
-          <img
-            alt="..."
-            className="path2"
-            src={require("assets/img/path2.png")}
-          />
-          <Col md="12">
-            <Card className="card-chart card-plain">
-              <CardHeader>
-                <Row>
-                  <Col className="text-left" sm="6">
-                    <hr className="line-info" />
-                    <h5 className="card-category">Total Investments</h5>
-                    <CardTitle tag="h2">Performance</CardTitle>
-                  </Col>
-                </Row>
-              </CardHeader>
-              <CardBody>
-                <div className="chart-area">
-                  <Line
-                    data={chartExample1.data}
-                    options={chartExample1.options}
-                  />
+                <div style={{ marginLeft: "auto", background: "rgba(255,255,255,0.2)", borderRadius: "50%", width: "36px", height: "36px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <span style={{ color: "#fff", fontSize: "1.1rem" }}>⊕</span>
                 </div>
-              </CardBody>
-            </Card>
-          </Col>
-        </section>
-        <section className="section section-lg section-coins">
-          <img
-            alt="..."
-            className="path"
-            src={require("assets/img/path3.png")}
-          />
-          <Container>
-            <Row>
-              <Col md="4">
-                <hr className="line-info" />
-                <h1>
-                  Choose the coin{" "}
-                  <span className="text-info">that fits your needs</span>
-                </h1>
-              </Col>
-            </Row>
-            <Row>
-              <Col md="4">
-                <Card className="card-coin card-plain">
-                  <CardHeader>
-                    <img
-                      alt="..."
-                      className="img-center img-fluid"
-                      src={require("assets/img/bitcoin.png")}
-                    />
-                  </CardHeader>
-                  <CardBody>
-                    <Row>
-                      <Col className="text-center" md="12">
-                        <h4 className="text-uppercase">Light Coin</h4>
-                        <span>Plan</span>
-                        <hr className="line-primary" />
-                      </Col>
-                    </Row>
-                    <Row>
-                      <ListGroup>
-                        <ListGroupItem>50 messages</ListGroupItem>
-                        <ListGroupItem>100 emails</ListGroupItem>
-                        <ListGroupItem>24/7 Support</ListGroupItem>
-                      </ListGroup>
-                    </Row>
-                  </CardBody>
-                  <CardFooter className="text-center">
-                    <Button className="btn-simple" color="primary">
-                      Get plan
-                    </Button>
-                  </CardFooter>
-                </Card>
-              </Col>
-              <Col md="4">
-                <Card className="card-coin card-plain">
-                  <CardHeader>
-                    <img
-                      alt="..."
-                      className="img-center img-fluid"
-                      src={require("assets/img/etherum.png")}
-                    />
-                  </CardHeader>
-                  <CardBody>
-                    <Row>
-                      <Col className="text-center" md="12">
-                        <h4 className="text-uppercase">Dark Coin</h4>
-                        <span>Plan</span>
-                        <hr className="line-success" />
-                      </Col>
-                    </Row>
-                    <Row>
-                      <ListGroup>
-                        <ListGroupItem>150 messages</ListGroupItem>
-                        <ListGroupItem>1000 emails</ListGroupItem>
-                        <ListGroupItem>24/7 Support</ListGroupItem>
-                      </ListGroup>
-                    </Row>
-                  </CardBody>
-                  <CardFooter className="text-center">
-                    <Button className="btn-simple" color="success">
-                      Get plan
-                    </Button>
-                  </CardFooter>
-                </Card>
-              </Col>
-              <Col md="4">
-                <Card className="card-coin card-plain">
-                  <CardHeader>
-                    <img
-                      alt="..."
-                      className="img-center img-fluid"
-                      src={require("assets/img/ripp.png")}
-                    />
-                  </CardHeader>
-                  <CardBody>
-                    <Row>
-                      <Col className="text-center" md="12">
-                        <h4 className="text-uppercase">Bright Coin</h4>
-                        <span>Plan</span>
-                        <hr className="line-info" />
-                      </Col>
-                    </Row>
-                    <Row>
-                      <ListGroup>
-                        <ListGroupItem>350 messages</ListGroupItem>
-                        <ListGroupItem>10K emails</ListGroupItem>
-                        <ListGroupItem>24/7 Support</ListGroupItem>
-                      </ListGroup>
-                    </Row>
-                  </CardBody>
-                  <CardFooter className="text-center">
-                    <Button className="btn-simple" color="info">
-                      Get plan
-                    </Button>
-                  </CardFooter>
-                </Card>
-              </Col>
-            </Row>
-          </Container>
-        </section> */}
-        
-          <Sections/>
-<DemoFooter />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* ── CTA strip ── */}
+        <div style={{
+          background: "linear-gradient(135deg, rgba(249,99,50,0.12) 0%, rgba(27,27,58,0) 100%)",
+          borderTop: "1px solid rgba(249,99,50,0.2)",
+          padding: "48px 20px",
+          textAlign: "center",
+        }}>
+          <h3 style={{ color: "#fff", fontWeight: 700, fontSize: "1.6rem", margin: "0 0 10px" }}>
+            Ready to transform your space?
+          </h3>
+          <p style={{ color: "rgba(255,255,255,0.55)", margin: "0 0 28px" }}>
+            Let's bring your vision to life.
+          </p>
+          <Link to="/contact-us" style={{
+            display: "inline-block", padding: "14px 36px",
+            background: ACCENT, color: "#fff", borderRadius: "28px",
+            fontWeight: 700, fontSize: "0.95rem", textDecoration: "none",
+            boxShadow: "0 8px 24px rgba(249,99,50,0.4)",
+            transition: "transform 0.2s ease, box-shadow 0.2s ease",
+          }}>
+            Contact Us Now
+          </Link>
+        </div>
+
+        <DemoFooter />
       </div>
+
+      {/* ── Lightbox ── */}
+      {lightbox !== null && (
+        <div
+          onClick={() => setLightbox(null)}
+          style={{
+            position: "fixed", inset: 0, zIndex: 9999,
+            background: "rgba(0,0,0,0.94)",
+            display: "flex", alignItems: "center", justifyContent: "center",
+          }}
+        >
+          {/* Close */}
+          <button onClick={() => setLightbox(null)} style={{
+            position: "absolute", top: "18px", right: "22px",
+            background: "rgba(255,255,255,0.1)", border: "none", borderRadius: "50%",
+            width: "40px", height: "40px", color: "#fff", fontSize: "1.2rem",
+            cursor: "pointer", lineHeight: "40px", textAlign: "center",
+          }}>✕</button>
+
+          {/* Prev */}
+          <button onClick={prev} style={{
+            position: "absolute", left: "16px",
+            background: "rgba(255,255,255,0.1)", border: "none", borderRadius: "50%",
+            width: "48px", height: "48px", color: "#fff", fontSize: "1.8rem",
+            cursor: "pointer", lineHeight: "44px", textAlign: "center",
+          }}>‹</button>
+
+          <img
+            src={filtered[lightbox].src}
+            alt={filtered[lightbox].label || "Project"}
+            onClick={e => e.stopPropagation()}
+            style={{
+              maxHeight: "88vh", maxWidth: "88vw",
+              borderRadius: "10px",
+              boxShadow: "0 0 80px rgba(249,99,50,0.25)",
+            }}
+          />
+
+          {/* Next */}
+          <button onClick={next} style={{
+            position: "absolute", right: "16px",
+            background: "rgba(255,255,255,0.1)", border: "none", borderRadius: "50%",
+            width: "48px", height: "48px", color: "#fff", fontSize: "1.8rem",
+            cursor: "pointer", lineHeight: "44px", textAlign: "center",
+          }}>›</button>
+
+          {/* Counter + label */}
+          <div style={{
+            position: "absolute", bottom: "20px", left: "50%", transform: "translateX(-50%)",
+            color: "rgba(255,255,255,0.7)", fontSize: "0.85rem", textAlign: "center",
+          }}>
+            {filtered[lightbox].label && (
+              <p style={{ color: "#fff", fontWeight: 600, margin: "0 0 4px" }}>{filtered[lightbox].label}</p>
+            )}
+            {lightbox + 1} / {filtered.length}
+          </div>
+        </div>
+      )}
     </>
   );
 }

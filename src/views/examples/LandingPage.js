@@ -35,7 +35,6 @@ const IMAGES = [
   { src: require("assets/img/jj.jpg"),          label: "",                     category: "Hardscape" },
   { src: require("assets/img/kkk.jpg"),         label: "",                     category: "Hardscape" },
   { src: require("assets/img/mmm.jpg"),         label: "",                     category: "Hardscape" },
-  { src: require("assets/img/p10.jpg"),         label: "",                     category: "Hardscape" },
 ];
 
 const CATS = ["All", "Hardscape", "Driveways", "Water Features", "Masonry", "Concrete", "Lighting"];

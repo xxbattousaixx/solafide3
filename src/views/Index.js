@@ -1,17 +1,36 @@
 
 import React from "react";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Solafide3DWalkthroughWrapper from 'components/Solafide3DWalkthroughWrapper.tsx';
-import { useNavigate } from 'react-router-dom';
+
+const INTRO_KEY = 'solafide_intro_seen';
 
 export default function Index() {
   const navigate = useNavigate();
+
+  // On returning visits, skip the intro immediately
+  const alreadySeen = React.useMemo(() => !!localStorage.getItem(INTRO_KEY), []);
+
+  React.useEffect(() => {
+    if (alreadySeen) {
+      navigate('/home', { replace: true });
+    }
+  }, [alreadySeen, navigate]);
+
+  // Don't flash the intro for returning visitors
+  if (alreadySeen) return null;
+
+  const handleComplete = () => {
+    localStorage.setItem(INTRO_KEY, '1');
+    navigate('/home');
+  };
+
   return (
     <>
       <Helmet>
         <title>Welcome to Solafide Services | Florida Hardscape Restoration Specialists</title>
-        <meta name="description" content="Solafide Services — Florida's premier paver cleaning, sealing, pool deck restoration, and hardscape specialists. Explore our interactive intro or go straight to our homepage." />
+        <meta name="description" content="Solafide Services — Florida's premier paver cleaning, sealing, pool deck restoration, and hardscape specialists." />
         <link rel="canonical" href="https://solafide-services.com/" />
         <meta name="robots" content="noindex, follow" />
         <meta property="og:title" content="Solafide Services | Florida Hardscape Restoration" />
@@ -25,29 +44,19 @@ export default function Index() {
         <meta name="twitter:site" content="@SolafideService" />
       </Helmet>
 
-      {/* Visually hidden H1 for SEO — screen-reader accessible */}
+      {/* Visually hidden H1 for SEO */}
       <h1 style={{
-        position: 'absolute',
-        width: '1px',
-        height: '1px',
-        padding: 0,
-        margin: '-1px',
-        overflow: 'hidden',
-        clip: 'rect(0,0,0,0)',
-        whiteSpace: 'nowrap',
-        border: 0,
+        position: 'absolute', width: '1px', height: '1px', padding: 0,
+        margin: '-1px', overflow: 'hidden', clip: 'rect(0,0,0,0)',
+        whiteSpace: 'nowrap', border: 0,
       }}>
         Solafide Services — Florida Paver Cleaning, Sealing &amp; Pool Deck Restoration Specialists
       </h1>
 
       {/* Hidden navigation links for crawlers */}
       <nav aria-label="Site navigation" style={{
-        position: 'absolute',
-        width: '1px',
-        height: '1px',
-        overflow: 'hidden',
-        clip: 'rect(0,0,0,0)',
-        whiteSpace: 'nowrap',
+        position: 'absolute', width: '1px', height: '1px',
+        overflow: 'hidden', clip: 'rect(0,0,0,0)', whiteSpace: 'nowrap',
       }}>
         <Link to="/home">Homepage — Solafide Services</Link>
         <Link to="/about-us">About Solafide Services</Link>
@@ -59,9 +68,7 @@ export default function Index() {
         <a href="https://www.facebook.com/SolafideL7/" target="_blank" rel="noopener noreferrer">Solafide on Facebook</a>
       </nav>
 
-      <Solafide3DWalkthroughWrapper
-        onComplete={() => navigate('/home')}
-      />
+      <Solafide3DWalkthroughWrapper onComplete={handleComplete} />
     </>
   );
 }

@@ -11,6 +11,7 @@ import "assets/demo/demo.css";
 import "assets/demo/react-demo.css";
 import { HelmetProvider } from 'react-helmet-async';
 import ScrollToTop from 'components/ScrollToTop';
+import CookieBanner from 'components/CookieBanner.js';
 // presentation pages
 import Index from "views/Index.js";
 import Home from "views/Home.js";
@@ -52,8 +53,9 @@ if (root.hasChildNodes()) {
       <Route path="/blog" element={<Blog />} />
       <Route path="/blog/:postId" element={<BlogPost />} />
 
-      <Route path="/" element={<Navigate to="/home" replace />} />
+      <Route path="/" element={<Navigate to="/index" replace />} />
     </Routes>
+    <CookieBanner />
   </BrowserRouter></HelmetProvider>, root1)} else {root1.render( <HelmetProvider>
   <BrowserRouter>
     <ScrollToTop />
@@ -73,7 +75,8 @@ if (root.hasChildNodes()) {
       <Route path="/blog" element={<Blog />} />
       <Route path="/blog/:postId" element={<BlogPost />} />
 
-      <Route path="/" element={<Navigate to="/home" replace />} />
+      <Route path="/" element={<Navigate to="/index" replace />} />
     </Routes>
+    <CookieBanner />
   </BrowserRouter></HelmetProvider>
 );}

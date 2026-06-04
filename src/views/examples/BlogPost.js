@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { Button, Container, Row, Col } from "reactstrap";
 import ColorNavbar from "components/Navbars/ColorNavbar.js";
 import DemoFooter from "components/Footers/DemoFooter.js";
@@ -32,6 +33,24 @@ export default function BlogPost() {
 
   return (
     <>
+      <Helmet>
+        <title>Commercial Hardscape Services | Paver Cleaning & Restoration — Solafide Services</title>
+        <meta name="description" content="Solafide Services delivers expert commercial hardscape restoration — paver cleaning, sealing, pressure washing, masonry, and pool deck refinishing for HOAs, property managers, and commercial clients across Florida." />
+        <link rel="canonical" href="https://solafide-services.com/commercial" />
+        <meta property="og:title" content="Commercial Hardscape Services | Solafide Services — Florida" />
+        <meta property="og:description" content="Professional commercial paver cleaning, sealing, pressure washing, and hardscape restoration for HOAs, property managers, and commercial properties across Florida." />
+        <meta property="og:url" content="https://solafide-services.com/commercial" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://solafide-services.com/og-preview.jpg" />
+        <meta property="og:site_name" content="Solafide Services" />
+        <meta property="og:locale" content="en_US" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Commercial Hardscape Services | Solafide Services — Florida" />
+        <meta name="twitter:description" content="Commercial paver cleaning, sealing, pressure washing, and hardscape restoration for HOAs and property managers across Florida." />
+        <meta name="twitter:image" content="https://solafide-services.com/og-preview.jpg" />
+        <meta name="twitter:site" content="@SolafideService" />
+        <meta name="keywords" content="commercial paver cleaning Florida, HOA paver sealing, commercial pressure washing, property management hardscape, Solafide Services" />
+      </Helmet>
       <ColorNavbar />
       <div className="wrapper" ref={wrapper}>
         <div className="page-header header-filter">

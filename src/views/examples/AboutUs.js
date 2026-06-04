@@ -64,6 +64,14 @@ export default function AboutUs() {
         <meta property="og:url" content="https://solafide-services.com/about-us" />
         <meta property="og:type" content="website" />
         <meta name="keywords" content="paver cleaning Florida, paver sealing, pool deck restoration, hardscape specialist Florida, Solafide Services" />
+        <meta property="og:image" content="https://solafide-services.com/og-preview.jpg" />
+        <meta property="og:site_name" content="Solafide Services" />
+        <meta property="og:locale" content="en_US" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Solafide Services | Paver & Hardscape Specialists in Florida" />
+        <meta name="twitter:description" content="Solafide Services is Florida's trusted hardscape restoration company — paver cleaning, sealing, pool deck refinishing, retaining walls, and pressure washing." />
+        <meta name="twitter:image" content="https://solafide-services.com/og-preview.jpg" />
+        <meta name="twitter:site" content="@SolafideService" />
       </Helmet>
       <ColorNavbar />
       <div className="wrapper" ref={wrapper}>

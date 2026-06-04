@@ -15,6 +15,7 @@
 
 */
 import React from "react";
+import { Helmet } from "react-helmet-async";
 // nodejs library that concatenates classes
 import classnames from "classnames";
 
@@ -215,6 +216,24 @@ export default function ContactUs() {
   }, []);
   return (
     <>
+      <Helmet>
+        <title>Contact Us | Solafide Services — Free Paver & Hardscape Estimates in Florida</title>
+        <meta name="description" content="Contact Solafide Services for a free on-site estimate. We serve homeowners, HOAs, and commercial properties across Florida — paver cleaning, sealing, pool decks, and pressure washing." />
+        <link rel="canonical" href="https://solafide-services.com/contact-us" />
+        <meta property="og:title" content="Contact Solafide Services | Free Hardscape Estimates — Florida" />
+        <meta property="og:description" content="Request a free on-site estimate from Solafide Services. Transparent pricing, fast scheduling, and expert hardscape restoration across Florida." />
+        <meta property="og:url" content="https://solafide-services.com/contact-us" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://solafide-services.com/og-preview.jpg" />
+        <meta property="og:site_name" content="Solafide Services" />
+        <meta property="og:locale" content="en_US" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Solafide Services | Free Hardscape Estimates — Florida" />
+        <meta name="twitter:description" content="Request a free on-site estimate — paver cleaning, sealing, pool deck restoration, and pressure washing across Florida." />
+        <meta name="twitter:image" content="https://solafide-services.com/og-preview.jpg" />
+        <meta name="twitter:site" content="@SolafideService" />
+        <meta name="keywords" content="contact Solafide Services, free paver estimate Florida, hardscape estimate, paver cleaning quote" />
+      </Helmet>
       <ColorNavbar />
       <div className="wrapper" ref={wrapper}>
         <div className="page-header header-filter contactus-3">
@@ -228,8 +247,8 @@ export default function ContactUs() {
           <Container>
             <Row>
               <Col className="text-center" md="12">
-                <h1 className="title">Got a question?</h1>
-                <h3>We'd like to talk more about what you need</h3>
+                <h1 className="title">Request Your Free On-Site Estimate</h1>
+                <h3>No obligation. No pressure. Just honest answers about your surfaces.</h3>
               </Col>
             </Row>
           </Container>
@@ -301,8 +320,7 @@ export default function ContactUs() {
                   Tell us more about <b>yourself</b>
                 </h1>
                 <h4 className="desc">
-                  Whether you have questions or you would just like to say
-                  hello, contact us.
+                  Tell us about your pavers, pool deck, driveway, or any other outdoor surface — we'll assess the condition and recommend the best approach with a clear, upfront quote.
                 </h4>
               </Col>
             </Row>

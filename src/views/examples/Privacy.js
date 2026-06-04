@@ -15,7 +15,7 @@
 
 */
 import React from "react";
-// react plugin used to create charts
+import { Helmet } from "react-helmet-async";
 
 // reactstrap components
 import {
@@ -40,6 +40,19 @@ export default function LandingPage() {
   }, []);
   return (
     <>
+      <Helmet>
+        <title>Privacy Policy | Solafide Services</title>
+        <meta name="description" content="Read the Solafide Services privacy policy. Learn how we collect, use, and protect your personal information when you use our website or request services." />
+        <link rel="canonical" href="https://solafide-services.com/privacy-policy" />
+        <meta property="og:title" content="Privacy Policy | Solafide Services" />
+        <meta property="og:url" content="https://solafide-services.com/privacy-policy" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Solafide Services" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Privacy Policy | Solafide Services" />
+        <meta name="twitter:site" content="@SolafideService" />
+        <meta name="robots" content="noindex, follow" />
+      </Helmet>
       <ColorNavbar />
       <div className="wrapper" ref={wrapper}>
           <br/>

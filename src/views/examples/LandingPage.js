@@ -70,6 +70,18 @@ export default function Gallery() {
         <title>Gallery | Solafide Services — Florida Masonry & Hardscape Portfolio</title>
         <meta name="description" content="Browse Solafide Services' project gallery. Custom driveways, retaining walls, waterfall features, outdoor lighting, and masonry work across Florida." />
         <link rel="canonical" href="https://solafide-services.com/gallery" />
+        <meta property="og:title" content="Gallery | Solafide Services — Florida Masonry & Hardscape Portfolio" />
+        <meta property="og:description" content="Browse Solafide Services' project gallery. Custom driveways, retaining walls, waterfall features, outdoor lighting, and masonry work across Florida." />
+        <meta property="og:url" content="https://solafide-services.com/gallery" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://solafide-services.com/og-preview.jpg" />
+        <meta property="og:site_name" content="Solafide Services" />
+        <meta property="og:locale" content="en_US" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Project Gallery | Solafide Services — Florida Hardscape Portfolio" />
+        <meta name="twitter:description" content="Browse our portfolio of paver installations, pool decks, retaining walls, waterfall features, and hardscape work across Florida." />
+        <meta name="twitter:image" content="https://solafide-services.com/og-preview.jpg" />
+        <meta name="twitter:site" content="@SolafideService" />
       </Helmet>
 
       <ColorNavbar />

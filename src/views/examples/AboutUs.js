@@ -56,12 +56,14 @@ export default function AboutUs() {
   return (
     <>
       <Helmet>
-        <title>About Us | Solafide Services — Florida Masonry Specialists</title>
-        <meta name="description" content="Learn about Solafide Services — a Florida-based masonry company specializing in interlocking pavers, pool decks, waterfall features, stone work, and concrete landscaping." />
+        <title>About Solafide Services | Paver & Hardscape Specialists in Florida</title>
+        <meta name="description" content="Solafide Services is Florida's trusted hardscape restoration company — paver cleaning, sealing, pool deck refinishing, retaining walls, and pressure washing. Free on-site estimates." />
         <link rel="canonical" href="https://solafide-services.com/about-us" />
-        <meta property="og:title" content="About Solafide Services | Florida Masonry & Stonework" />
+        <meta property="og:title" content="About Solafide Services | Paver & Hardscape Specialists in Florida" />
+        <meta property="og:description" content="Learn why Florida homeowners, HOAs, and property managers trust Solafide for paver cleaning, sealing, pool deck restoration, and hardscape work." />
         <meta property="og:url" content="https://solafide-services.com/about-us" />
         <meta property="og:type" content="website" />
+        <meta name="keywords" content="paver cleaning Florida, paver sealing, pool deck restoration, hardscape specialist Florida, Solafide Services" />
       </Helmet>
       <ColorNavbar />
       <div className="wrapper" ref={wrapper}>
@@ -292,9 +294,9 @@ export default function AboutUs() {
           <Container>
             <Row className="mb-5">
               <Col className="ml-auto mr-auto text-center" md="8">
-                <h2 style={{color:'orange'}} className="title">Specialized in Masonry</h2>
+                <h2 style={{color:'orange'}} className="title">Hardscape Specialists — Not Generalists</h2>
                 <h4 className="description">
-                  Dedicatedly performing artisanal work in the state of Florida -- we provide residential and commercial services.
+                  Pavers, pool decks, retaining walls, and stonework are all we do — and we do them to an exceptional standard. Serving residential and commercial clients across Florida with honest pricing and zero shortcuts.
                 </h4>
               </Col>
             </Row>
@@ -313,9 +315,12 @@ export default function AboutUs() {
           <Container>
             <Row className="align-items-center">
               <Col className="mx-auto" lg="5" md="10" xs="12">
-                <h1 style={{color:'orange'}} className="title">You should contact us!</h1>
+                <h1 style={{color:'orange'}} className="title">Get Your Free On-Site Estimate</h1>
                 <p className="description">
-                  Our labor is performed with the utmost attention to detail, providing lasting value and a pleasant experience for our customers.
+                  Tell us about your project and we'll schedule a visit at your convenience — no sales pressure, no obligation. Just an honest assessment and a transparent quote from specialists who know hardscape inside and out.
+                </p>
+                <p className="description" style={{fontSize:'0.85rem', color:'rgba(255,255,255,0.5)', marginTop:'-0.5rem', marginBottom:'1rem'}}>
+                  ✓ Upfront pricing &nbsp;·&nbsp; ✓ Fast scheduling &nbsp;·&nbsp; ✓ Residential &amp; commercial
                 </p>
                  <Row>
                                 <Col className="mb-3" md="12" sm="12">

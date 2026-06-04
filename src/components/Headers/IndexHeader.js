@@ -33,8 +33,8 @@ export default function Home() {
         <Container>
           <div className="content-center brand">
             <h1 style={{color:'orange'}} className="h1-seo">Solafide• Services</h1>
-            <h2>A professional masonry - stone - concrete company</h2>
-            <h3>'Trained professionals, Exceptional Results, Sensible Investment.'</h3>
+            <h2>Florida's Premier Paver, Pool Deck &amp; Hardscape Specialists</h2>
+            <h3>Restore. Seal. Transform. — Residential &amp; Commercial · Free On-Site Estimates</h3>
           </div>
         </Container>
       </div>

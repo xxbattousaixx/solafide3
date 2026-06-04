@@ -189,13 +189,14 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Solafide Services | Florida Masonry & Stone Specialists</title>
-        <meta name="description" content="Solafide Services — Florida's premier masonry, pavers, pool decks, and stone specialists. Expert craftsmanship for residential and commercial outdoor spaces." />
+        <title>Solafide Services | Paver Cleaning, Sealing & Pool Deck Restoration — Florida</title>
+        <meta name="description" content="Solafide Services — Florida's trusted specialists in paver cleaning, sealing, pool deck restoration, and pressure washing. Free on-site estimates. Residential & commercial." />
         <link rel="canonical" href="https://solafide-services.com/home" />
-        <meta property="og:title" content="Solafide Services | Florida Masonry & Stone Specialists" />
-        <meta property="og:description" content="Expert masonry, interlocking pavers, pool decks, retaining walls, and stonework across Florida." />
+        <meta property="og:title" content="Solafide Services | Paver Cleaning, Sealing & Pool Deck Restoration — Florida" />
+        <meta property="og:description" content="Restore your pavers, driveways, and pool decks to like-new condition. Expert clean & seal, pressure washing, and hardscape restoration across Florida." />
         <meta property="og:url" content="https://solafide-services.com" />
         <meta property="og:type" content="website" />
+        <meta name="keywords" content="paver cleaning Florida, paver sealing, pool deck restoration, pressure washing, driveway cleaning, hardscape restoration, Solafide Services" />
       </Helmet>
       <ColorNavbar />
       <div className="wrapper index-page" ref={wrapper}>
@@ -206,6 +207,19 @@ export default function Home() {
 
 
   <Container fluid>
+    <Row>
+      <Col className="text-center" xs="12" style={{paddingTop:'2.5rem', paddingBottom:'1rem'}}>
+        <p style={{letterSpacing:'0.2em', fontSize:'0.72rem', fontWeight:700, color:'#f5a623', textTransform:'uppercase', marginBottom:'0.5rem'}}>
+          The Solafide Difference
+        </p>
+        <h2 style={{color:'#ffffff', fontWeight:800, fontSize:'clamp(1.6rem,4vw,2.6rem)', marginBottom:'0.5rem'}}>
+          See What a Proper Restoration Actually Looks Like
+        </h2>
+        <p style={{color:'rgba(255,255,255,0.6)', maxWidth:'520px', margin:'0 auto 1.5rem', fontSize:'1rem'}}>
+          Most surfaces just need the right treatment — not a full replacement. Here's what our clients experience.
+        </p>
+      </Col>
+    </Row>
        <Row>
                 <Col lg="6">
                   <Card
@@ -258,10 +272,25 @@ export default function Home() {
 
   <div className="content-center">
             <Row>
-              <Col className="ml-auto mr-auto text-center" md="6">
+              <Col className="ml-auto mr-auto text-center" md="8">
                 <h1 style={{color:'orange'}} className="title">
-                  Crafting Exquisite Outdoor Spaces. Quality You Expect, Value You Appreciate.
+                  Your Outdoor Surfaces Deserve to Look Their Best
                 </h1>
+                <p style={{color:'rgba(255,255,255,0.75)', fontSize:'1.1rem', maxWidth:'560px', margin:'0 auto 1.5rem', lineHeight:1.7}}>
+                  We specialize in hardscape restoration — paver cleaning &amp; sealing, pool deck refinishing, pressure washing, and concrete curbing. No rushed jobs. Honest pricing. Results you'll see immediately.
+                </p>
+                <Button
+                  className="btn-round"
+                  color="warning"
+                  href="/about-us"
+                  style={{fontWeight:700, fontSize:'1rem', padding:'12px 32px', marginBottom:'0.75rem'}}
+                >
+                  Get Your Free Quote
+                </Button>
+                <p style={{color:'rgba(255,255,255,0.45)', fontSize:'0.8rem', marginTop:'0.5rem'}}>
+                  Trusted by homeowners, HOAs &amp; property managers across Florida
+                </p>
+                <div style={{marginTop:'1rem'}}>
                 <Button
                   className="btn-round btn-icon"
                   color="primary"
@@ -277,6 +306,7 @@ export default function Home() {
                 >
                   <i className="fab fa-instagram" />
                 </Button>
+                </div>
               </Col>
             </Row>
           </div>  
@@ -294,14 +324,14 @@ export default function Home() {
                               </a>
                             </div>
                             <CardBody>
-                              <h6 className="category text-primary">Outdoor lighting</h6>
+                              <h6 className="category text-primary">Outdoor Lighting</h6>
                               <CardTitle tag="h4">
                                 <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                                  Outside beacons
+                                  Illuminate Your Property's Full Potential
                                 </a>
                               </CardTitle>
                               <p className="card-description">
-                                Welcome to your private oasis. Our outdoor lighting setups will take your home lounging experience to the next level.
+                                Professionally designed landscape lighting that adds security, curb appeal, and ambiance — turning your outdoor space into a private retreat you'll actually use after dark.
                               </p>
                         
                             </CardBody>
@@ -319,14 +349,14 @@ export default function Home() {
                               </a>
                             </div>
                             <CardBody>
-                              <h6 className="category text-info">Waterfall</h6>
+                              <h6 className="category text-info">Custom Waterfalls</h6>
                               <CardTitle tag="h4">
                                 <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                                  Outdoor artwork 
+                                  Water Features That Command Attention
                                 </a>
                               </CardTitle>
                               <p className="card-description">
-                                Be amazed with the possibilities -- we create beautiful pieces that are easy on the eyes.
+                                A custom waterfall feature becomes the centerpiece of your landscape — adding tranquility, beauty, and measurable value to your home. Built to last, crafted to impress.
                               </p>
                               {/* <CardFooter>
                                 <div className="author">
@@ -356,14 +386,14 @@ export default function Home() {
                               </a>
                             </div>
                             <CardBody>
-                              <h6 className="category text-warning">Retaining Wall</h6>
+                              <h6 className="category text-warning">Retaining Walls</h6>
                               <CardTitle tag="h4">
                                 <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                                  Solid structures built to protect 
+                                  Engineered to Last. Designed to Impress.
                                 </a>
                               </CardTitle>
                               <p className="card-description">
-                                Our retaining walls have a neat look that takes full advantage of its surroundings.
+                                Our retaining walls solve real drainage and erosion problems while elevating your property's aesthetic. Durable construction, clean lines, and zero shortcuts — every time.
                               </p>
                               {/* <CardFooter>
                                 <div className="author">
@@ -396,11 +426,11 @@ export default function Home() {
                               <h6 className="category text-warning">Concrete Curbing</h6>
                               <CardTitle tag="h4">
                                 <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                                  Ready for a new look?
+                                  The Finishing Touch That Transforms Everything
                                 </a>
                               </CardTitle>
                               <p className="card-description">
-                                We design driveway and landscape layouts that are an experience for guests and residents alike.
+                                Precision-poured concrete curbing defines your landscape, prevents mulch runoff, and gives your driveway and garden beds a polished, professional appearance that holds up for years.
                               </p>
                               {/* <CardFooter>
                                 <div className="author">
@@ -426,6 +456,19 @@ export default function Home() {
 
                <div className="testimonials-2">
                         <Container>
+                          <Row>
+                            <Col className="text-center" xs="12" style={{paddingTop:'2.5rem', paddingBottom:'1rem'}}>
+                              <p style={{letterSpacing:'0.2em', fontSize:'0.72rem', fontWeight:700, color:'#f5a623', textTransform:'uppercase', marginBottom:'0.5rem'}}>
+                                Real Clients. Real Results.
+                              </p>
+                              <h2 style={{color:'#ffffff', fontWeight:800, fontSize:'clamp(1.5rem,3.5vw,2.4rem)', marginBottom:'0.25rem'}}>
+                                What Florida Homeowners Are Saying
+                              </h2>
+                              <p style={{color:'rgba(255,255,255,0.55)', fontSize:'0.9rem', marginBottom:'0'}}>
+                                5-star service from first contact to final walkthrough
+                              </p>
+                            </Col>
+                          </Row>
                           <Row>
                             <Col md="12">
                               <Carousel
@@ -479,6 +522,56 @@ export default function Home() {
                           </Row>
                         </Container>
                       </div>
+        {/* Urgency / Lead Conversion Section */}
+        <div style={{
+          background:'linear-gradient(135deg,rgba(245,166,35,0.12) 0%,rgba(245,166,35,0.04) 100%)',
+          borderTop:'1px solid rgba(245,166,35,0.2)',
+          borderBottom:'1px solid rgba(245,166,35,0.2)',
+          padding:'4rem 0'
+        }}>
+          <Container>
+            <Row className="justify-content-center text-center">
+              <Col lg="8" md="10" xs="12">
+                <p style={{letterSpacing:'0.2em', fontSize:'0.72rem', fontWeight:700, color:'#f5a623', textTransform:'uppercase', marginBottom:'0.6rem'}}>
+                  Now Scheduling in Your Area
+                </p>
+                <h2 style={{color:'#ffffff', fontWeight:800, fontSize:'clamp(1.6rem,4vw,2.8rem)', lineHeight:1.2, marginBottom:'1rem'}}>
+                  Ready to Restore Your Pavers, Driveway, or Pool Deck?
+                </h2>
+                <p style={{color:'rgba(255,255,255,0.7)', fontSize:'1.05rem', lineHeight:1.75, marginBottom:'0.5rem', maxWidth:'540px', margin:'0 auto 0.75rem'}}>
+                  Spots fill up fast — especially heading into peak season. Get your free on-site estimate before your preferred dates are gone.
+                </p>
+                <ul style={{listStyle:'none', padding:0, margin:'0 auto 2rem', display:'inline-block', textAlign:'left', color:'rgba(255,255,255,0.75)', fontSize:'0.95rem', lineHeight:2}}>
+                  <li><span style={{color:'#f5a623', marginRight:'8px'}}>✓</span> No-pressure, no-obligation estimate</li>
+                  <li><span style={{color:'#f5a623', marginRight:'8px'}}>✓</span> Transparent, upfront pricing</li>
+                  <li><span style={{color:'#f5a623', marginRight:'8px'}}>✓</span> Residential &amp; commercial — we handle both</li>
+                  <li><span style={{color:'#f5a623', marginRight:'8px'}}>✓</span> Results you can see the same day</li>
+                </ul>
+                <div>
+                  <Button
+                    className="btn-round"
+                    color="warning"
+                    href="/about-us"
+                    style={{fontWeight:700, fontSize:'1.05rem', padding:'14px 40px', marginRight:'12px'}}
+                  >
+                    Request Your Free Quote
+                  </Button>
+                  <Button
+                    className="btn-round btn-outline-default"
+                    color="default"
+                    href="/gallery"
+                    style={{fontWeight:600, fontSize:'1rem', padding:'13px 32px'}}
+                  >
+                    View Our Work
+                  </Button>
+                </div>
+                <p style={{color:'rgba(255,255,255,0.35)', fontSize:'0.78rem', marginTop:'1.2rem'}}>
+                  Serving homeowners, HOAs &amp; property managers across Florida — Paver Cleaning · Sealing · Pool Decks · Pressure Washing
+                </p>
+              </Col>
+            </Row>
+          </Container>
+        </div>
         <DemoFooter />
    
 

@@ -50,7 +50,7 @@ if (root.hasChildNodes()) {
       <Route path="/blog" element={<Blog />} />
       <Route path="/blog/:postId" element={<BlogPost />} />
 
-      <Route path="/" element={<Navigate to="/index" replace />} />
+      <Route path="/" element={<Navigate to="/home" replace />} />
     </Routes>
   </BrowserRouter></HelmetProvider>, root1)} else {root1.render( <HelmetProvider>
   <BrowserRouter>
@@ -70,7 +70,7 @@ if (root.hasChildNodes()) {
       <Route path="/blog" element={<Blog />} />
       <Route path="/blog/:postId" element={<BlogPost />} />
 
-      <Route path="/" element={<Navigate to="/index" replace />} />
+      <Route path="/" element={<Navigate to="/home" replace />} />
     </Routes>
   </BrowserRouter></HelmetProvider>
 );}

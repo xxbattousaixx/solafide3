@@ -197,6 +197,14 @@ export default function Home() {
         <meta property="og:url" content="https://solafide-services.com" />
         <meta property="og:type" content="website" />
         <meta name="keywords" content="paver cleaning Florida, paver sealing, pool deck restoration, pressure washing, driveway cleaning, hardscape restoration, Solafide Services" />
+        <meta property="og:image" content="https://solafide-services.com/og-preview.jpg" />
+        <meta property="og:site_name" content="Solafide Services" />
+        <meta property="og:locale" content="en_US" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Solafide Services | Paver Cleaning, Sealing & Pool Deck Restoration — Florida" />
+        <meta name="twitter:description" content="Florida's trusted specialists in paver cleaning, sealing, pool deck restoration, and pressure washing. Free on-site estimates." />
+        <meta name="twitter:image" content="https://solafide-services.com/og-preview.jpg" />
+        <meta name="twitter:site" content="@SolafideService" />
       </Helmet>
       <ColorNavbar />
       <div className="wrapper index-page" ref={wrapper}>

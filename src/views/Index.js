@@ -1,42 +1,67 @@
 
 import React from "react";
+import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import Solafide3DWalkthroughWrapper from 'components/Solafide3DWalkthroughWrapper.tsx';
 import { useNavigate } from 'react-router-dom';
-//     <Button
-//       className="btn-round btn-icon btn-simple slick-prev slick-arrow"
-//       color="primary"
-//       aria-label="Previous"
-//       type="button"
-//       onClick={props.onClick}
-//     >
-//       <i className="tim-icons icon-minimal-left" />
-//     </Button>
-//   );
-// };
-// // custom next button for the slick component
-// const NextButton = (props) => {
-//   return (
-//     <Button
-//       className="btn-round btn-icon btn-simple slick-next slick-arrow"
-//       color="primary"
-//       aria-label="Next"
-//       type="button"
-//     >
-//       <i className="tim-icons icon-minimal-right" onClick={props.onClick} />
-//     </Button>
-//   );
-// };
+
 export default function Index() {
   const navigate = useNavigate();
   return (
     <>
+      <Helmet>
+        <title>Welcome to Solafide Services | Florida Hardscape Restoration Specialists</title>
+        <meta name="description" content="Solafide Services — Florida's premier paver cleaning, sealing, pool deck restoration, and hardscape specialists. Explore our interactive intro or go straight to our homepage." />
+        <link rel="canonical" href="https://solafide-services.com/" />
+        <meta name="robots" content="noindex, follow" />
+        <meta property="og:title" content="Solafide Services | Florida Hardscape Restoration" />
+        <meta property="og:description" content="Paver cleaning, sealing, pool deck restoration, and hardscape services across Florida." />
+        <meta property="og:url" content="https://solafide-services.com/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Solafide Services" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Solafide Services | Florida Hardscape Restoration" />
+        <meta name="twitter:description" content="Paver cleaning, sealing, pool deck restoration, and hardscape services across Florida." />
+        <meta name="twitter:site" content="@SolafideService" />
+      </Helmet>
 
-  
- <Solafide3DWalkthroughWrapper 
-  onComplete={() => navigate('/home')}
-/>
+      {/* Visually hidden H1 for SEO — screen-reader accessible */}
+      <h1 style={{
+        position: 'absolute',
+        width: '1px',
+        height: '1px',
+        padding: 0,
+        margin: '-1px',
+        overflow: 'hidden',
+        clip: 'rect(0,0,0,0)',
+        whiteSpace: 'nowrap',
+        border: 0,
+      }}>
+        Solafide Services — Florida Paver Cleaning, Sealing &amp; Pool Deck Restoration Specialists
+      </h1>
 
+      {/* Hidden navigation links for crawlers */}
+      <nav aria-label="Site navigation" style={{
+        position: 'absolute',
+        width: '1px',
+        height: '1px',
+        overflow: 'hidden',
+        clip: 'rect(0,0,0,0)',
+        whiteSpace: 'nowrap',
+      }}>
+        <Link to="/home">Homepage — Solafide Services</Link>
+        <Link to="/about-us">About Solafide Services</Link>
+        <Link to="/contact-us">Contact Us &amp; Free Estimates</Link>
+        <Link to="/gallery">Project Gallery</Link>
+        <Link to="/residential">Residential Services</Link>
+        <Link to="/commercial">Commercial Services</Link>
+        <Link to="/clean-seal">Pressure Washing &amp; Clean &amp; Seal</Link>
+        <a href="https://www.facebook.com/SolafideL7/" target="_blank" rel="noopener noreferrer">Solafide on Facebook</a>
+      </nav>
 
+      <Solafide3DWalkthroughWrapper
+        onComplete={() => navigate('/home')}
+      />
     </>
   );
 }

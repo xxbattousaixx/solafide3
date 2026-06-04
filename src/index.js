@@ -22,6 +22,7 @@ import Ecommerce from "views/examples/Ecommerce.js";
 import Blog from "views/examples/Blog.tsx";
 import BlogPost from "views/examples/BlogPost.tsx";
 import Privacy from "views/examples/Privacy.js";
+import CookiesPolicy from "views/examples/CookiesPolicy.js";
 import Residential from "views/examples/BlogPosts.js";
 import ContactUs from "views/examples/ContactUs.js";
 import Gallery from "views/examples/LandingPage.js";
@@ -45,6 +46,7 @@ if (root.hasChildNodes()) {
       <Route path="/contact-us" element={<ContactUs />} />
       <Route path="/gallery" element={<Gallery />} />
       <Route path="/privacy-policy" element={<Privacy />} />
+      <Route path="/cookies-policy" element={<CookiesPolicy />} />
 
       <Route path="/clean-seal" element={<Ecommerce />} />
       <Route path="/blog" element={<Blog />} />
@@ -65,6 +67,7 @@ if (root.hasChildNodes()) {
       <Route path="/contact-us" element={<ContactUs />} />
       <Route path="/gallery" element={<Gallery />} />
       <Route path="/privacy-policy" element={<Privacy />} />
+      <Route path="/cookies-policy" element={<CookiesPolicy />} />
 
       <Route path="/clean-seal" element={<Ecommerce />} />
       <Route path="/blog" element={<Blog />} />

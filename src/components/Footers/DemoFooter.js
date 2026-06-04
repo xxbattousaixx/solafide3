@@ -70,6 +70,14 @@ export default function DemoFooter() {
                     Privacy Policy
                   </NavLink>
                 </NavItem>
+                <NavItem>
+                  <NavLink
+                    to="/cookies-policy"
+                    tag={Link}
+                  >
+                    Cookies Policy
+                  </NavLink>
+                </NavItem>
              <NavItem>
                   <NavLink to="/gallery" tag={Link}>
                     Gallery

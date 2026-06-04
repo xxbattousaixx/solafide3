@@ -1,33 +1,34 @@
-/*!
-
-=========================================================
-* BLK Design System PRO React - v1.2.2
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/blk-design-system-pro-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 import { Helmet } from "react-helmet-async";
-
-// reactstrap components
-import {
-  Container,
-  Row,
-} from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
+import { Link } from "react-router-dom";
 import DemoFooter from "components/Footers/DemoFooter.js";
-
-// core components
 import ColorNavbar from "components/Navbars/ColorNavbar.js";
 
-export default function LandingPage() {
+const ACCENT = "#f5a623";
+const TEXT = "rgba(255,255,255,0.82)";
+const MUTED = "rgba(255,255,255,0.5)";
+const CARD_BG = "rgba(255,255,255,0.04)";
+const BORDER = "rgba(255,255,255,0.1)";
+
+const Section = ({ title, id, children }) => (
+  <section id={id} style={{ marginBottom: "2.5rem" }}>
+    <h2 style={{ color: ACCENT, fontSize: "1.4rem", fontWeight: 700, marginBottom: "1rem", borderBottom: `1px solid ${BORDER}`, paddingBottom: "0.6rem" }}>
+      {title}
+    </h2>
+    {children}
+  </section>
+);
+
+const P = ({ children, style }) => (
+  <p style={{ color: TEXT, lineHeight: 1.8, marginBottom: "1rem", ...style }}>{children}</p>
+);
+
+const Li = ({ children }) => (
+  <li style={{ color: TEXT, lineHeight: 1.8, marginBottom: "0.4rem" }}>{children}</li>
+);
+
+export default function PrivacyPolicy() {
   const wrapper = React.useRef(null);
   React.useEffect(() => {
     document.documentElement.scrollTop = 0;
@@ -38,6 +39,7 @@ export default function LandingPage() {
       document.body.classList.remove("privacy");
     };
   }, []);
+
   return (
     <>
       <Helmet>
@@ -53,261 +55,281 @@ export default function LandingPage() {
         <meta name="twitter:site" content="@SolafideService" />
         <meta name="robots" content="noindex, follow" />
       </Helmet>
+
       <ColorNavbar />
-      <div className="wrapper" ref={wrapper}>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <Container>
-            <Row className="row-grid justify-content-between align-items-center text-left">
-           <h1>Privacy Policy</h1>
-<p>Last updated: January 08, 2026</p>
-<p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
-<p>We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy. This Privacy Policy has been created with the help of the <a href="https://www.privacypolicies.com/privacy-policy-generator/" target="_blank" rel="noreferrer">Privacy Policy Generator</a>.</p>
-          <br/>
-<h2>Interpretation and Definitions</h2>
-          <br/>
 
+      <div className="wrapper" ref={wrapper} style={{ paddingTop: "120px", minHeight: "100vh" }}>
+        <Container style={{ maxWidth: "860px", paddingBottom: "5rem" }}>
+          <Row>
+            <Col>
 
-<p><h3>Interpretation</h3>The words whose initial letters are capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.<br/></p>
+              {/* Header */}
+              <div style={{ marginBottom: "3rem" }}>
+                <span style={{ color: ACCENT, fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase" }}>
+                  Legal
+                </span>
+                <h1 style={{ color: "#fff", fontSize: "clamp(2rem,5vw,3rem)", fontWeight: 800, lineHeight: 1.15, margin: "0.4rem 0 0.8rem" }}>
+                  Privacy Policy
+                </h1>
+                <p style={{ color: MUTED, fontSize: "0.88rem" }}>
+                  Last updated: June 4, 2026 &nbsp;·&nbsp;
+                  <Link to="/cookies-policy" style={{ color: ACCENT }}>View Cookies Policy</Link>
+                </p>
+              </div>
 
-<p><h3>Definitions</h3></p><p>
-<br/>For the purposes of this Privacy Policy:</p>
-<ul>
-<li>
-<p><strong>Account</strong> means a unique account created for You to access our Service or parts of our Service.</p>
-</li>
-<li>
-<p><strong>Affiliate</strong> means an entity that controls, is controlled by, or is under common control with a party, where &quot;control&quot; means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.</p>
-</li>
-<li>
-<p><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to Solafide Services, LLC , 850 Rosemary Circle, FL 34212.</p>
-</li>
-<li>
-<p><strong>Cookies</strong> are small files that are placed on Your computer, mobile device or any other device by a website, containing the details of Your browsing history on that website among its many uses.</p>
-</li>
-<li>
-<p><strong>Country</strong> refers to: Florida,  United States</p>
-</li>
-<li>
-<p><strong>Device</strong> means any device that can access the Service such as a computer, a cell phone or a digital tablet.</p>
-</li>
-<li>
-<p><strong>Personal Data</strong> is any information that relates to an identified or identifiable individual.</p>
-</li>
-<li>
-<p><strong>Service</strong> refers to the Website.</p>
-</li>
-<li>
-<p><strong>Service Provider</strong> means any natural or legal person who processes the data on behalf of the Company. It refers to third-party companies or individuals employed by the Company to facilitate the Service, to provide the Service on behalf of the Company, to perform services related to the Service or to assist the Company in analyzing how the Service is used.</p>
-</li>
-<li>
-<p><strong>Usage Data</strong> refers to data collected automatically, either generated by the use of the Service or from the Service infrastructure itself (for example, the duration of a page visit).</p>
-</li>
-<li>
-<p><strong>Website</strong> refers to Solafide-Services, accessible from <a href="https://www.solafide-services.com" rel="noreferrer noopener nofollow" target="_blank">https://www.solafide-services.com</a></p>
-</li>
-<li>
-<p><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</p>
-</li>
-</ul>
-          <br/>
+              {/* Quick nav */}
+              <div style={{ background: CARD_BG, border: `1px solid ${BORDER}`, borderRadius: "12px", padding: "1.4rem 1.6rem", marginBottom: "2.5rem" }}>
+                <p style={{ color: "#fff", fontWeight: 700, marginBottom: "0.7rem", fontSize: "0.9rem" }}>Quick Navigation</p>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem 1.2rem" }}>
+                  {[
+                    ["#who-we-are", "Who We Are"],
+                    ["#data-we-collect", "Data We Collect"],
+                    ["#how-we-use", "How We Use Your Data"],
+                    ["#third-parties", "Third-Party Services"],
+                    ["#cookies", "Cookies"],
+                    ["#data-retention", "Data Retention"],
+                    ["#your-rights", "Your Rights"],
+                    ["#security", "Security"],
+                    ["#contact", "Contact Us"],
+                  ].map(([href, label]) => (
+                    <a key={href} href={href} style={{ color: ACCENT, fontSize: "0.85rem", lineHeight: 2 }}>{label}</a>
+                  ))}
+                </div>
+              </div>
 
-<h2>Collecting and Using Your Personal Data</h2>
-          <br/>
+              {/* Intro */}
+              <P>
+                Solafide Services, LLC ("Solafide", "we", "us", or "our") is committed to protecting your personal information and being transparent about what data we collect, why we collect it, and how it is used. This Privacy Policy applies to our website at <strong style={{ color: "#fff" }}>solafide-services.com</strong> and describes your rights and our obligations under applicable privacy law, including the Florida Digital Bill of Rights and applicable provisions of the California Consumer Privacy Act (CCPA).
+              </P>
+              <P>
+                Please read this policy carefully. By using our website or submitting a service enquiry, you acknowledge you have read and understood this policy.
+              </P>
 
+              {/* Who we are */}
+              <Section title="1. Who We Are" id="who-we-are">
+                <div style={{ background: CARD_BG, border: `1px solid ${BORDER}`, borderRadius: "10px", padding: "1.2rem 1.4rem" }}>
+                  <p style={{ color: "#fff", fontWeight: 700, margin: "0 0 0.3rem" }}>Solafide Services, LLC</p>
+                  <p style={{ color: MUTED, margin: "0 0 0.25rem", fontSize: "0.9rem" }}>850 Rosemary Circle, Bradenton, FL 34212, United States</p>
+                  <p style={{ color: MUTED, margin: "0 0 0.25rem", fontSize: "0.9rem" }}>
+                    Email: <a href="mailto:edmena24@gmail.com" style={{ color: ACCENT }}>edmena24@gmail.com</a>
+                  </p>
+                  <p style={{ color: MUTED, margin: 0, fontSize: "0.9rem" }}>
+                    Phone: <a href="tel:+19415181657" style={{ color: ACCENT }}>941.518.1657</a>
+                  </p>
+                </div>
+                <P style={{ marginTop: "1rem" }}>
+                  We are a Florida-based hardscape restoration company providing paver cleaning, sealing, pool deck restoration, pressure washing, and related services to residential and commercial clients. We operate this website as an informational and lead-generation resource — there are no user accounts, subscription services, or e-commerce transactions.
+                </P>
+              </Section>
 
-    
-<p><h3><br/>Types of Data Collected</h3><h4>Personal Data</h4>While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:</p>
-<ul>
-<li>
-<p>Email address</p>
-</li>
-<li>
-<p>First name and last name</p>
-</li>
-<li>
-<p>Phone number</p>
-</li>
-<li>
-<p>Usage Data</p>
-</li>
-</ul>
-          <br/>
+              {/* Data we collect */}
+              <Section title="2. Data We Collect" id="data-we-collect">
+                <P>We only collect information that is necessary to provide you with our services or respond to your enquiries. We do not sell, rent, or trade your personal data.</P>
 
+                <h3 style={{ color: "#fff", fontWeight: 700, fontSize: "1rem", marginBottom: "0.6rem", marginTop: "1.4rem" }}>2.1 Information You Provide Directly</h3>
+                <P>When you submit a contact or service request form on our website, we collect:</P>
+                <ul style={{ paddingLeft: "1.4rem", marginBottom: "1rem" }}>
+                  <Li><strong>Full name</strong> — to address you correctly and reference your enquiry.</Li>
+                  <Li><strong>Email address</strong> — to respond to your enquiry and, where you have consented, send service-related follow-ups.</Li>
+                  <Li><strong>Phone number</strong> — to contact you about scheduling or pricing your job.</Li>
+                  <Li><strong>Message / project description</strong> — to understand the scope of your service request.</Li>
+                </ul>
+                <P style={{ color: MUTED, fontSize: "0.88rem" }}>
+                  <strong style={{ color: TEXT }}>Legal basis:</strong> Processing is necessary to take steps at your request prior to entering a contract (Art. 6(1)(b) GDPR equivalent; CCPA: service provision). Where you provide your contact details to receive follow-up marketing communications, we rely on your consent, which you may withdraw at any time.
+                </P>
 
+                <h3 style={{ color: "#fff", fontWeight: 700, fontSize: "1rem", marginBottom: "0.6rem", marginTop: "1.4rem" }}>2.2 Information Collected Automatically</h3>
+                <P>When you visit our website, standard technical information is automatically recorded by our web hosting infrastructure:</P>
+                <ul style={{ paddingLeft: "1.4rem", marginBottom: "1rem" }}>
+                  <Li><strong>IP address</strong> — used to identify broad geographic region and detect malicious traffic.</Li>
+                  <Li><strong>Browser type and version</strong> — used to ensure our site displays correctly on your device.</Li>
+                  <Li><strong>Pages visited and time spent</strong> — used to understand which content is most useful to visitors.</Li>
+                  <Li><strong>Referring URL</strong> — to understand how visitors find our website.</Li>
+                  <Li><strong>Device type</strong> (desktop, tablet, mobile) — to optimise the display of our website.</Li>
+                </ul>
+                <P style={{ color: MUTED, fontSize: "0.88rem" }}>
+                  <strong style={{ color: TEXT }}>Legal basis:</strong> Legitimate interest — we use this information solely to maintain and improve our website, not to build profiles of individual users.
+                </P>
 
-<p><p><h4>Usage Data</h4>
-<br/>Usage Data is collected automatically when using the Service.</p>Usage Data may include information such as Your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data.</p>
-<p>When You access the Service by or through a mobile device, We may collect certain information automatically, including, but not limited to, the type of mobile device You use, Your mobile device's unique ID, the IP address of Your mobile device, Your mobile operating system, the type of mobile Internet browser You use, unique device identifiers and other diagnostic data.</p>
-<p>We may also collect information that Your browser sends whenever You visit Our Service or when You access the Service by or through a mobile device.</p>
-          <br/>
+                <h3 style={{ color: "#fff", fontWeight: 700, fontSize: "1rem", marginBottom: "0.6rem", marginTop: "1.4rem" }}>2.3 What We Do Not Collect</h3>
+                <ul style={{ paddingLeft: "1.4rem", marginBottom: "1rem" }}>
+                  <Li>Payment card details or financial information — we do not process payments online.</Li>
+                  <Li>Government ID numbers or Social Security Numbers.</Li>
+                  <Li>Health or biometric data.</Li>
+                  <Li>Information from or about children under 13 — our services are not directed at children.</Li>
+                </ul>
+              </Section>
 
-<h4>Tracking Technologies and Cookies</h4>
-<br/>
-<p>We use Cookies and similar tracking technologies to track the activity on Our Service and store certain information. Tracking technologies We use include beacons, tags, and scripts to collect and track information and to improve and analyze Our Service. The technologies We use may include:</p>
-<ul>
-<li><strong>Cookies or Browser Cookies.</strong> A cookie is a small file placed on Your Device. You can instruct Your browser to refuse all Cookies or to indicate when a Cookie is being sent. However, if You do not accept Cookies, You may not be able to use some parts of our Service. Unless you have adjusted Your browser setting so that it will refuse Cookies, our Service may use Cookies.</li>
-<li><strong>Web Beacons.</strong> Certain sections of our Service and our emails may contain small electronic files known as web beacons (also referred to as clear gifs, pixel tags, and single-pixel gifs) that permit the Company, for example, to count users who have visited those pages or opened an email and for other related website statistics (for example, recording the popularity of a certain section and verifying system and server integrity).</li>
-</ul>
-<p>Cookies can be &quot;Persistent&quot; or &quot;Session&quot; Cookies. Persistent Cookies remain on Your personal computer or mobile device when You go offline, while Session Cookies are deleted as soon as You close Your web browser. Learn more about cookies on the <a href="https://www.privacypolicies.com/blog/privacy-policy-template/#Use_Of_Cookies_Log_Files_And_Tracking" target="_blank" rel="noreferrer">Privacy Policies website</a> article.</p>
-<p>We use both Session and Persistent Cookies for the purposes set out below:</p>
-<ul>
-<li>
-<p><strong>Necessary / Essential Cookies</strong></p>
-<p>Type: Session Cookies</p>
-<p>Administered by: Us</p>
-<p>Purpose: These Cookies are essential to provide You with services available through the Website and to enable You to use some of its features. They help to authenticate users and prevent fraudulent use of user accounts. Without these Cookies, the services that You have asked for cannot be provided, and We only use these Cookies to provide You with those services.</p>
-</li>
-<li>
-<p><strong>Cookies Policy / Notice Acceptance Cookies</strong></p>
-<p>Type: Persistent Cookies</p>
-<p>Administered by: Us</p>
-<p>Purpose: These Cookies identify if users have accepted the use of cookies on the Website.</p>
-</li>
-<li>
-<p><strong>Functionality Cookies</strong></p>
-<p>Type: Persistent Cookies</p>
-<p>Administered by: Us</p>
-<p>Purpose: These Cookies allow us to remember choices You make when You use the Website, such as remembering your login details or language preference. The purpose of these Cookies is to provide You with a more personal experience and to avoid You having to re-enter your preferences every time You use the Website.</p>
-</li>
-</ul>
-<p>For more information about the cookies we use and your choices regarding cookies, please visit our Cookies Policy or the Cookies section of our Privacy Policy.</p>
-<br/>
-<h3>Use of Your Personal Data</h3><br/>
-<p>The Company may use Personal Data for the following purposes:</p>
-<ul>
-<li>
-<p><strong>To provide and maintain our Service</strong>, including to monitor the usage of our Service.</p>
-</li>
-<li>
-<p><strong>To manage Your Account:</strong> to manage Your registration as a user of the Service. The Personal Data You provide can give You access to different functionalities of the Service that are available to You as a registered user.</p>
-</li>
-<li>
-<p><strong>For the performance of a contract:</strong> the development, compliance and undertaking of the purchase contract for the products, items or services You have purchased or of any other contract with Us through the Service.</p>
-</li>
-<li>
-<p><strong>To contact You:</strong> To contact You by email, telephone calls, SMS, or other equivalent forms of electronic communication, such as a mobile application's push notifications regarding updates or informative communications related to the functionalities, products or contracted services, including the security updates, when necessary or reasonable for their implementation.</p>
-</li>
-<li>
-<p><strong>To provide You</strong> with news, special offers, and general information about other goods, services and events which We offer that are similar to those that you have already purchased or inquired about unless You have opted not to receive such information.</p>
-</li>
-<li>
-<p><strong>To manage Your requests:</strong> To attend and manage Your requests to Us.</p>
-</li>
-<li>
-<p><strong>For business transfers:</strong> We may use Your information to evaluate or conduct a merger, divestiture, restructuring, reorganization, dissolution, or other sale or transfer of some or all of Our assets, whether as a going concern or as part of bankruptcy, liquidation, or similar proceeding, in which Personal Data held by Us about our Service users is among the assets transferred.</p>
-</li>
-<li>
-<p><strong>For other purposes</strong>: We may use Your information for other purposes, such as data analysis, identifying usage trends, determining the effectiveness of our promotional campaigns and to evaluate and improve our Service, products, services, marketing and your experience.</p>
-</li>
-</ul>
-<p>We may share Your personal information in the following situations:</p>
-<ul>
-<li><strong>With Service Providers:</strong> We may share Your personal information with Service Providers to monitor and analyze the use of our Service,  to contact You.</li>
-<li><strong>For business transfers:</strong> We may share or transfer Your personal information in connection with, or during negotiations of, any merger, sale of Company assets, financing, or acquisition of all or a portion of Our business to another company.</li>
-<li><strong>With Affiliates:</strong> We may share Your information with Our affiliates, in which case we will require those affiliates to honor this Privacy Policy. Affiliates include Our parent company and any other subsidiaries, joint venture partners or other companies that We control or that are under common control with Us.</li>
-<li><strong>With business partners:</strong> We may share Your information with Our business partners to offer You certain products, services or promotions.</li>
-<li><strong>With other users:</strong> when You share personal information or otherwise interact in the public areas with other users, such information may be viewed by all users and may be publicly distributed outside.</li>
-<li><strong>With Your consent</strong>: We may disclose Your personal information for any other purpose with Your consent.</li>
-</ul>
-          <br/>
+              {/* How we use */}
+              <Section title="3. How We Use Your Data" id="how-we-use">
+                <P>We use the information we collect for the following purposes only:</P>
+                <ul style={{ paddingLeft: "1.4rem" }}>
+                  <Li><strong>Responding to service enquiries</strong> — to contact you, provide estimates, and schedule jobs.</Li>
+                  <Li><strong>Service delivery</strong> — to carry out the hardscape restoration work you have requested.</Li>
+                  <Li><strong>Follow-up communications</strong> — with your consent, to send you information about related services, promotions, or seasonal offers from Solafide Services.</Li>
+                  <Li><strong>Website improvement</strong> — to analyse aggregate usage patterns and improve our website and content.</Li>
+                  <Li><strong>Legal compliance</strong> — to comply with applicable laws, regulations, and legal proceedings.</Li>
+                  <Li><strong>Fraud prevention and security</strong> — to detect and prevent fraudulent submissions or malicious activity.</Li>
+                </ul>
+                <P style={{ marginTop: "1rem" }}>
+                  We do not use your personal data for automated decision-making or profiling, and we do not use it for any purpose incompatible with the purposes listed above without your prior consent.
+                </P>
+              </Section>
 
-<h3>Retention of Your Personal Data</h3>
-<br/>
-<p>The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use Your Personal Data to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes, and enforce our legal agreements and policies.</p>
-<p>The Company will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a shorter period of time, except when this data is used to strengthen the security or to improve the functionality of Our Service, or We are legally obligated to retain this data for longer periods.</p>
-          <br/>
+              {/* Third parties */}
+              <Section title="4. Third-Party Services We Use" id="third-parties">
+                <P>To operate our website effectively, we use a limited number of trusted third-party services. Where these services process your personal data on our behalf, we have confirmed they maintain appropriate data protection standards.</P>
 
-<h3>Transfer of Your Personal Data</h3>
-<br/>
-<p>Your information, including Personal Data, is processed at the Company's operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to — and maintained on — computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ from those from Your jurisdiction.</p>
-<p>Your consent to this Privacy Policy followed by Your submission of such information represents Your agreement to that transfer.</p>
-<p>The Company will take all steps reasonably necessary to ensure that Your data is treated securely and in accordance with this Privacy Policy and no transfer of Your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of Your data and other personal information.</p>
-          <br/>
+                {[
+                  {
+                    name: "Postmail (postmail.invotes.com)",
+                    role: "Email delivery — contact form processor",
+                    detail: "When you submit a contact or request form on our website, your submission is transmitted to Postmail's API for delivery to our inbox. Postmail receives your name, email address, phone number, and message. We have configured this to use HTTPS transmission. We recommend you review Postmail's privacy documentation if you have questions about their data handling.",
+                  },
+                  {
+                    name: "Google Maps JavaScript API",
+                    role: "Mapping — location display on Contact page",
+                    detail: "Our Contact Us page loads the Google Maps JavaScript API to help visitors find our service area. When this page loads, Google may set cookies on your device and collect standard request metadata (IP address, browser info). We have limited this to display-only functionality. See Google's Privacy Policy at policies.google.com/privacy.",
+                  },
+                  {
+                    name: "Netlify (netlify.com)",
+                    role: "Web hosting and delivery",
+                    detail: "Our website is hosted on Netlify's infrastructure. Netlify processes web requests made to our site, which includes your IP address and browser information, for routing and security purposes. Netlify does not use this data for advertising. See Netlify's Privacy Policy at netlify.com/privacy.",
+                  },
+                  {
+                    name: "Facebook / Meta",
+                    role: "Social media — linked page only",
+                    detail: "Our website contains links to our Facebook business page (facebook.com/SolafideL7/). Clicking these links will take you to Facebook's platform. We do not embed Facebook tracking pixels on our website. If you are logged into Facebook when you follow a link, Facebook may associate that visit with your account under their own privacy policy.",
+                  },
+                ].map(({ name, role, detail }) => (
+                  <div key={name} style={{ background: CARD_BG, border: `1px solid ${BORDER}`, borderRadius: "10px", padding: "1.2rem 1.4rem", marginBottom: "1rem" }}>
+                    <p style={{ color: "#fff", fontWeight: 700, margin: "0 0 0.2rem" }}>{name}</p>
+                    <p style={{ color: ACCENT, fontSize: "0.78rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", margin: "0 0 0.6rem" }}>{role}</p>
+                    <p style={{ color: MUTED, fontSize: "0.88rem", lineHeight: 1.75, margin: 0 }}>{detail}</p>
+                  </div>
+                ))}
 
-<h3>Delete Your Personal Data</h3>
-<br/>
-<p>You have the right to delete or request that We assist in deleting the Personal Data that We have collected about You.</p>
-<p>Our Service may give You the ability to delete certain information about You from within the Service.</p>
-<p>You may update, amend, or delete Your information at any time by signing in to Your Account, if you have one, and visiting the account settings section that allows you to manage Your personal information. You may also contact Us to request access to, correct, or delete any personal information that You have provided to Us.</p>
-<p>Please note, however, that We may need to retain certain information when we have a legal obligation or lawful basis to do so.</p>
-          <br/>
+                <P style={{ marginTop: "1rem" }}>
+                  We do not sell your personal data to any third party, and we do not share it with advertising networks or data brokers.
+                </P>
+              </Section>
 
-<h3>Disclosure of Your Personal Data</h3>
-          <br/>
+              {/* Cookies */}
+              <Section title="5. Cookies & Tracking Technologies" id="cookies">
+                <P>
+                  Our website uses cookies and similar technologies to operate correctly and to understand how visitors use our site. For full details of the cookies we use, including how to manage or disable them, please see our dedicated{" "}
+                  <Link to="/cookies-policy" style={{ color: ACCENT }}>Cookies Policy</Link>.
+                </P>
+                <P>
+                  In summary: we use strictly necessary cookies to make the website function, and we load third-party services (Google Maps, Facebook links) that may set their own cookies on your device. We do not currently use a dedicated analytics platform (such as Google Analytics).
+                </P>
+              </Section>
 
+              {/* Data retention */}
+              <Section title="6. Data Retention" id="data-retention">
+                <P>We retain your personal data only for as long as is necessary for the purposes for which it was collected:</P>
+                <ul style={{ paddingLeft: "1.4rem" }}>
+                  <Li><strong>Contact form submissions</strong> — retained in our email inbox for up to 2 years, then deleted, unless an ongoing service relationship exists.</Li>
+                  <Li><strong>Service records</strong> — records of completed jobs are retained for up to 7 years to comply with Florida business record-keeping requirements and tax obligations.</Li>
+                  <Li><strong>Web server logs</strong> (IP addresses, page visits) — automatically purged by our hosting provider (Netlify) on a rolling 30-day basis.</Li>
+                  <Li><strong>Marketing communications</strong> — if you have opted in, we retain your contact details until you request removal.</Li>
+                </ul>
+                <P style={{ marginTop: "1rem" }}>
+                  When data is no longer needed, we securely delete or anonymise it. You can request deletion of your data at any time (see Your Rights below).
+                </P>
+              </Section>
 
-<p><h4>Business Transactions</h4>
-<br/>If the Company is involved in a merger, acquisition or asset sale, Your Personal Data may be transferred. We will provide notice before Your Personal Data is transferred and becomes subject to a different Privacy Policy.</p>
-          <br/>
+              {/* Your rights */}
+              <Section title="7. Your Privacy Rights" id="your-rights">
+                <P>
+                  Depending on your jurisdiction, you may have the following rights regarding your personal data. We will respond to all requests within 30 days.
+                </P>
 
+                {[
+                  { right: "Right to Access", desc: "You can request a copy of the personal data we hold about you." },
+                  { right: "Right to Rectification", desc: "You can ask us to correct any inaccurate or incomplete information we hold about you." },
+                  { right: 'Right to Erasure ("Right to be Forgotten")', desc: "You can ask us to delete your personal data where there is no compelling reason for us to continue holding it." },
+                  { right: "Right to Restrict Processing", desc: "You can ask us to stop using your data in certain ways while we deal with a complaint or request." },
+                  { right: "Right to Data Portability", desc: "You can request a machine-readable copy of the data you have provided to us." },
+                  { right: "Right to Object", desc: "You can object to our processing of your data where we rely on legitimate interests as our legal basis." },
+                  { right: "Right to Withdraw Consent", desc: "Where processing is based on your consent, you can withdraw it at any time. This does not affect the lawfulness of processing before withdrawal." },
+                  { right: "Do Not Sell My Personal Information (CCPA)", desc: "We do not sell your personal data. California residents may submit an opt-out request, though no selling is occurring." },
+                ].map(({ right, desc }) => (
+                  <div key={right} style={{ display: "flex", gap: "1rem", marginBottom: "0.9rem" }}>
+                    <div style={{ width: "4px", flexShrink: 0, background: ACCENT, borderRadius: "2px", marginTop: "2px" }} />
+                    <div>
+                      <p style={{ color: "#fff", fontWeight: 700, margin: "0 0 0.2rem", fontSize: "0.95rem" }}>{right}</p>
+                      <p style={{ color: MUTED, fontSize: "0.88rem", lineHeight: 1.7, margin: 0 }}>{desc}</p>
+                    </div>
+                  </div>
+                ))}
 
-<p><h4>Law enforcement</h4>
-<br/>Under certain circumstances, the Company may be required to disclose Your Personal Data if required to do so by law or in response to valid requests by public authorities (e.g. a court or a government agency).</p>
-          <br/>
+                <P style={{ marginTop: "1.2rem" }}>
+                  To exercise any of these rights, contact us at <a href="mailto:edmena24@gmail.com" style={{ color: ACCENT }}>edmena24@gmail.com</a> or call <a href="tel:+19415181657" style={{ color: ACCENT }}>941.518.1657</a>. We may need to verify your identity before processing your request.
+                </P>
+              </Section>
 
-<h4>Other legal requirements</h4>
-<br/>
-<p>The Company may disclose Your Personal Data in the good faith belief that such action is necessary to:</p>
-<ul>
-<li>Comply with a legal obligation</li>
-<li>Protect and defend the rights or property of the Company</li>
-<li>Prevent or investigate possible wrongdoing in connection with the Service</li>
-<li>Protect the personal safety of Users of the Service or the public</li>
-<li>Protect against legal liability</li>
-</ul>
-          <br/>
+              {/* Security */}
+              <Section title="8. Security" id="security">
+                <P>
+                  We take the security of your personal data seriously. Our website is served exclusively over HTTPS (TLS encryption). Contact form submissions are transmitted securely to our email delivery service. We restrict access to personal data to authorised personnel only.
+                </P>
+                <P>
+                  However, no method of electronic transmission or storage is 100% secure. While we strive to use commercially reasonable means to protect your data, we cannot guarantee absolute security. In the event of a data breach that affects your rights and freedoms, we will notify relevant authorities and affected individuals in accordance with applicable law.
+                </P>
+              </Section>
 
+              {/* Children */}
+              <Section title="9. Children's Privacy">
+                <P>
+                  Our website and services are not directed at individuals under 13 years of age. We do not knowingly collect personal data from children under 13. If you believe a child has submitted personal information through our website, please contact us immediately and we will delete it promptly.
+                </P>
+              </Section>
 
-<p><h3>Security of Your Personal Data</h3>
-<br/>The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially reasonable means to protect Your Personal Data, We cannot guarantee its absolute security.</p>
-          <br/>
+              {/* External links */}
+              <Section title="10. Links to Other Websites">
+                <P>
+                  Our website may contain links to external sites (such as Facebook or supplier pages). We are not responsible for the privacy practices of those sites and encourage you to review their individual privacy policies. Our policy applies only to information collected on <strong style={{ color: "#fff" }}>solafide-services.com</strong>.
+                </P>
+              </Section>
 
-<h2>Children's Privacy</h2>
-<br/>
-<p>Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 13 without verification of parental consent, We take steps to remove that information from Our servers.</p>
-<p>If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent's consent before We collect and use that information.</p>
-          <br/>
+              {/* Changes */}
+              <Section title="11. Changes to This Policy">
+                <P>
+                  We may update this Privacy Policy from time to time to reflect changes in our practices, technology, or legal requirements. When we make significant changes, we will update the "Last updated" date at the top of this page. Where required by law, we will notify you of material changes by email or by a notice on our website.
+                </P>
+                <P>
+                  Continued use of our website after changes are posted constitutes your acceptance of the updated policy.
+                </P>
+              </Section>
 
-<h2>Links to Other Websites</h2>
-<br/>
-<p>Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party's site. We strongly advise You to review the Privacy Policy of every site You visit.</p>
-<p>We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.</p>
-          <br/>
+              {/* Contact */}
+              <Section title="12. Contact Us" id="contact">
+                <P>
+                  If you have any questions, concerns, or requests relating to this Privacy Policy or your personal data, please contact us using any of the methods below:
+                </P>
+                <div style={{ background: CARD_BG, border: `1px solid ${BORDER}`, borderRadius: "12px", padding: "1.4rem 1.6rem" }}>
+                  <p style={{ color: "#fff", fontWeight: 700, marginBottom: "0.4rem" }}>Solafide Services, LLC</p>
+                  <p style={{ color: MUTED, marginBottom: "0.3rem" }}>850 Rosemary Circle, Bradenton, FL 34212</p>
+                  <p style={{ color: MUTED, marginBottom: "0.3rem" }}>
+                    Email: <a href="mailto:edmena24@gmail.com" style={{ color: ACCENT }}>edmena24@gmail.com</a>
+                  </p>
+                  <p style={{ color: MUTED, marginBottom: "0.3rem" }}>
+                    Phone: <a href="tel:+19415181657" style={{ color: ACCENT }}>941.518.1657</a>
+                  </p>
+                  <p style={{ color: MUTED, margin: 0 }}>
+                    Or use our <Link to="/contact-us" style={{ color: ACCENT }}>contact form</Link>.
+                  </p>
+                </div>
+                <P style={{ marginTop: "1.2rem", color: MUTED, fontSize: "0.85rem" }}>
+                  We aim to respond to all privacy-related requests within 30 days of receipt.
+                </P>
+              </Section>
 
-<h2>Changes to this Privacy Policy</h2>
-<br/>
-<p>We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page.</p>
-<p>We will let You know via email and/or a prominent notice on Our Service, prior to the change becoming effective and update the &quot;Last updated&quot; date at the top of this Privacy Policy.</p>
-<p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
-          <br/>
-
-<h2>Contact Us</h2>
-<br/>
-<p>If you have any questions about this Privacy Policy, You can contact us:</p>
-<ul>
-<li>
-<p>By email: edmena24@gmail.com</p>
-</li>
-<li>
-<p>By visiting this page on our website: <a href="https://solafide-services.com/contact-us" rel="noreferrer noopener nofollow" target="_blank">https://solafide-services.com/contact-us</a></p>
-</li>
-<li>
-<p>By phone: 941.518.1657</p>
-</li>
-</ul>
-            </Row>
-          </Container>
-       <DemoFooter/>
-
+            </Col>
+          </Row>
+        </Container>
+        <DemoFooter />
       </div>
     </>
   );

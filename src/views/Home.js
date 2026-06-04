@@ -203,8 +203,82 @@ export default function Home() {
         
         <IndexHeader />
   </div>
-  
 
+  {/* SECTION 2 — PROBLEM / AGITATION */}
+  <div style={{
+    background:'linear-gradient(180deg,#12142b 0%,#1a1c38 100%)',
+    padding:'5rem 0 4rem',
+    borderBottom:'1px solid rgba(245,166,35,0.15)'
+  }}>
+    <Container>
+      <Row className="justify-content-center text-center" style={{marginBottom:'3rem'}}>
+        <Col lg="8" md="10" xs="12">
+          <p style={{letterSpacing:'0.2em', fontSize:'0.72rem', fontWeight:700, color:'#f5a623', textTransform:'uppercase', marginBottom:'0.6rem'}}>
+            Sound Familiar?
+          </p>
+          <h2 style={{color:'#ffffff', fontWeight:800, fontSize:'clamp(1.7rem,4.5vw,3rem)', lineHeight:1.2, marginBottom:'1rem'}}>
+            If Your Outdoor Surfaces Look Like This… You're Not Alone
+          </h2>
+          <p style={{color:'rgba(255,255,255,0.65)', fontSize:'1.05rem', lineHeight:1.8, maxWidth:'600px', margin:'0 auto'}}>
+            Over time, even well-installed pavers and concrete surfaces deteriorate — and most homeowners don't realize how far gone things are until they actually look.
+          </p>
+        </Col>
+      </Row>
+      <Row className="justify-content-center" style={{marginBottom:'3rem'}}>
+        {[
+          {icon:'icon-alert-circle-exc', label:'Dark stains from dirt, oil & weather', color:'#e74c3c'},
+          {icon:'icon-zoom-split', label:'Faded color and dull, washed-out appearance', color:'#e67e22'},
+          {icon:'icon-leaf', label:'Weeds and moss growing between pavers', color:'#27ae60'},
+          {icon:'icon-refresh-02', label:'Slippery algae buildup on pool decks', color:'#3498db'},
+          {icon:'icon-settings-gear-63', label:'Loose, shifting, or sinking paver sections', color:'#9b59b6'},
+          {icon:'icon-time-alarm', label:'Sealant worn away — leaving surfaces exposed', color:'#f5a623'},
+        ].map(({icon, label, color}) => (
+          <Col key={label} xs="12" sm="6" md="4" style={{marginBottom:'1.4rem'}}>
+            <div style={{
+              display:'flex',
+              alignItems:'flex-start',
+              gap:'1rem',
+              background:'rgba(255,255,255,0.03)',
+              border:'1px solid rgba(255,255,255,0.07)',
+              borderRadius:'12px',
+              padding:'1.2rem 1.4rem',
+              textAlign:'left',
+              height:'100%'
+            }}>
+              <div style={{
+                width:'42px',
+                height:'42px',
+                borderRadius:'50%',
+                background:`${color}22`,
+                border:`1px solid ${color}55`,
+                display:'flex',
+                alignItems:'center',
+                justifyContent:'center',
+                flexShrink:0
+              }}>
+                <i className={`tim-icons ${icon}`} style={{color, fontSize:'1rem'}} />
+              </div>
+              <p style={{color:'rgba(255,255,255,0.78)', fontSize:'0.92rem', lineHeight:1.6, margin:0, paddingTop:'0.2rem'}}>{label}</p>
+            </div>
+          </Col>
+        ))}
+      </Row>
+      <Row className="justify-content-center text-center">
+        <Col lg="7" md="9" xs="12">
+          <div style={{
+            background:'rgba(245,166,35,0.08)',
+            border:'1px solid rgba(245,166,35,0.3)',
+            borderRadius:'14px',
+            padding:'1.8rem 2rem'
+          }}>
+            <p style={{color:'rgba(255,255,255,0.9)', fontSize:'1.05rem', lineHeight:1.8, margin:0}}>
+              <strong style={{color:'#f5a623'}}>The good news:</strong> in most cases, a professional clean &amp; seal or targeted restoration is all it takes to bring surfaces back to like-new condition — at a fraction of the cost of replacement.
+            </p>
+          </div>
+        </Col>
+      </Row>
+    </Container>
+  </div>
 
   <Container fluid>
     <Row>
@@ -452,7 +526,112 @@ export default function Home() {
                       </Row>
                     </Container>
 
- 
+  {/* SECTION 5 — WHY CHOOSE SOLAFIDE */}
+  <div style={{
+    background:'linear-gradient(180deg,#1a1c38 0%,#12142b 100%)',
+    padding:'5rem 0',
+    borderTop:'1px solid rgba(245,166,35,0.1)',
+    borderBottom:'1px solid rgba(245,166,35,0.1)'
+  }}>
+    <Container>
+      <Row className="justify-content-center text-center" style={{marginBottom:'3rem'}}>
+        <Col lg="8" md="10" xs="12">
+          <p style={{letterSpacing:'0.2em', fontSize:'0.72rem', fontWeight:700, color:'#f5a623', textTransform:'uppercase', marginBottom:'0.6rem'}}>
+            Why Homeowners Choose Us
+          </p>
+          <h2 style={{color:'#ffffff', fontWeight:800, fontSize:'clamp(1.7rem,4vw,2.8rem)', lineHeight:1.2, marginBottom:'1rem'}}>
+            Not Every Contractor Is Built the Same
+          </h2>
+          <p style={{color:'rgba(255,255,255,0.6)', fontSize:'1rem', lineHeight:1.8, maxWidth:'560px', margin:'0 auto'}}>
+            We're not a general cleaning company that does pavers on the side. Hardscape restoration is all we do — and that focus shows in every project we deliver.
+          </p>
+        </Col>
+      </Row>
+      <Row className="justify-content-center" style={{marginBottom:'3rem'}}>
+        {[
+          {
+            icon:'icon-badge',
+            title:'Specialized, Not Generic',
+            body:'We focus exclusively on hardscape restoration — pavers, pool decks, driveways, and stonework. That depth of expertise makes a measurable difference in the finished result.',
+            color:'#f5a623'
+          },
+          {
+            icon:'icon-zoom-split',
+            title:'Attention to Detail',
+            body:'No rushed walk-throughs, no half-cleaned sections. We treat every property as if our own name is on the driveway — because our reputation depends on it.',
+            color:'#3498db'
+          },
+          {
+            icon:'icon-money-coins',
+            title:'Honest, Upfront Pricing',
+            body:'We assess your surfaces in person and give you a clear quote — no hidden charges, no upselling after the job starts. What we quote is what you pay.',
+            color:'#27ae60'
+          },
+          {
+            icon:'icon-time-alarm',
+            title:'Results You See the Same Day',
+            body:'Most clients are genuinely amazed at the difference once our crew finishes. It\'s not magic — it\'s the right equipment, the right products, and experienced hands.',
+            color:'#9b59b6'
+          },
+          {
+            icon:'icon-single-02',
+            title:'Residential & Commercial',
+            body:'From a single driveway to a full HOA community or commercial property — we have the crew and equipment to handle projects of any size, on your schedule.',
+            color:'#e74c3c'
+          },
+          {
+            icon:'icon-check-2',
+            title:'We Stand Behind Our Work',
+            body:'If something isn\'t right, we make it right — no arguments, no excuses. That accountability is built into how we operate, not an afterthought.',
+            color:'#f39c12'
+          },
+        ].map(({icon, title, body, color}) => (
+          <Col key={title} md="4" xs="12" style={{marginBottom:'1.6rem'}}>
+            <div style={{
+              background:'rgba(255,255,255,0.03)',
+              border:'1px solid rgba(255,255,255,0.07)',
+              borderRadius:'14px',
+              padding:'1.8rem 1.6rem',
+              height:'100%',
+              transition:'border-color 0.2s',
+              textAlign:'left'
+            }}>
+              <div style={{
+                width:'48px',
+                height:'48px',
+                borderRadius:'50%',
+                background:`${color}18`,
+                border:`1px solid ${color}44`,
+                display:'flex',
+                alignItems:'center',
+                justifyContent:'center',
+                marginBottom:'1rem'
+              }}>
+                <i className={`tim-icons ${icon}`} style={{color, fontSize:'1.1rem'}} />
+              </div>
+              <h5 style={{color:'#ffffff', fontWeight:700, fontSize:'1rem', marginBottom:'0.6rem'}}>{title}</h5>
+              <p style={{color:'rgba(255,255,255,0.65)', fontSize:'0.88rem', lineHeight:1.75, margin:0}}>{body}</p>
+            </div>
+          </Col>
+        ))}
+      </Row>
+      <Row className="justify-content-center text-center">
+        <Col xs="12">
+          <p style={{color:'rgba(255,255,255,0.5)', fontSize:'0.92rem', fontStyle:'italic', marginBottom:'1.5rem'}}>
+            "We treat every property like it's our own."
+          </p>
+          <Button
+            className="btn-round"
+            color="warning"
+            href="/about-us"
+            style={{fontWeight:700, fontSize:'1rem', padding:'12px 36px'}}
+          >
+            Get Your Free On-Site Estimate
+          </Button>
+        </Col>
+      </Row>
+    </Container>
+  </div>
 
                <div className="testimonials-2">
                         <Container>

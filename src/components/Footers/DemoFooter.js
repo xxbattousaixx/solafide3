@@ -22,6 +22,10 @@ export default function DemoFooter() {
           <Row>
             <Col md="3">
               <h1 style={{color:'orange'}} className="title">Solafide• Services</h1>
+              <p style={{color:'rgba(255,255,255,0.5)', fontSize:'0.8rem', lineHeight:1.6, marginTop:'-0.5rem'}}>
+                Paver Cleaning · Sealing<br/>Pressure Washing · Pool Decks<br/>
+                <span style={{color:'rgba(255,255,255,0.35)'}}>Serving Florida — Residential &amp; Commercial</span>
+              </p>
             </Col>
             <Col md="3" xs="6">
               <Nav>

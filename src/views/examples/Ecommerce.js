@@ -38,22 +38,22 @@ export default function Ecommerce() {
   return (
     <>
       <Helmet>
-        <title>Paver Clean &amp; Seal | Solafide Services Florida</title>
-        <meta name="description" content="Professional paver pressure washing &amp; clean and seal by Solafide Services. Remove stains, restore color, and protect surfaces with professional-grade sealants. Serving Florida." />
+        <title>Paver Clean &amp; Seal | Bradenton FL | Solafide</title>
+        <meta name="description" content="Paver sealing &amp; pressure washing in Bradenton FL. We remove efflorescence, restore faded pavers &amp; seal travertine pool decks. Licensed &amp; insured. Free estimate." />
         <link rel="canonical" href="https://solafide-services.com/clean-seal" />
-        <meta property="og:title" content="Paver Cleaning, Pressure Washing & Clean & Seal | Solafide Services" />
-        <meta property="og:description" content="Expert paver pressure washing and sealing services across Florida. Remove stains, restore color, and protect your surfaces with professional-grade sealants." />
+        <meta property="og:title" content="Paver Clean & Seal | Bradenton FL | Solafide Services" />
+        <meta property="og:description" content="Paver sealing, efflorescence removal & pool deck cleaning in Bradenton FL. Licensed & insured. Free on-site estimate from Solafide Services." />
         <meta property="og:url" content="https://solafide-services.com/clean-seal" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://solafide-services.com/og-preview.jpg" />
         <meta property="og:site_name" content="Solafide Services" />
         <meta property="og:locale" content="en_US" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Paver Cleaning, Pressure Washing & Clean & Seal | Solafide Services" />
-        <meta name="twitter:description" content="Professional paver pressure washing and sealing across Florida. Remove stains, restore color, protect your investment." />
+        <meta name="twitter:title" content="Paver Clean & Seal | Bradenton FL | Solafide Services" />
+        <meta name="twitter:description" content="Paver sealing, efflorescence removal, travertine pool deck sealing & pressure washing in Bradenton FL. Free estimate." />
         <meta name="twitter:image" content="https://solafide-services.com/og-preview.jpg" />
         <meta name="twitter:site" content="@SolafideService" />
-        <meta name="keywords" content="paver cleaning Florida, pressure washing, clean and seal, paver sealing, driveway cleaning, pool deck cleaning, Solafide Services" />
+        <meta name="keywords" content="paver sealing Bradenton FL, paver sealing cost, paver sealing price, efflorescence removal pavers, polymeric sand paver joints, travertine pool deck sealing, how to clean pavers, pool deck cleaning Bradenton, pressure washing Bradenton FL, paver cleaning and sealing, free estimate paver sealing, licensed and insured" />
       </Helmet>
       <ColorNavbar />
       <div className="wrapper" ref={wrapper}>
@@ -136,6 +136,50 @@ export default function Ecommerce() {
               <Button className="btn-round" color="warning" href="/contact-us" style={{fontWeight: 700, padding: '12px 36px'}}>
                 Request Your Free On-Site Estimate
               </Button>
+            </Col>
+          </Row>
+        </Container>
+
+        {/* FAQ / keyword-rich info section */}
+        <Container style={{paddingBottom: '3rem'}}>
+          <Row className="justify-content-center" style={{marginBottom: '1.5rem'}}>
+            <Col md="10">
+              <h2 style={{color: 'orange', textAlign: 'center', marginBottom: '0.5rem'}}>
+                Common Questions About Paver Sealing &amp; Cleaning in Bradenton FL
+              </h2>
+              <p style={{color: 'rgba(255,255,255,0.55)', textAlign: 'center', marginBottom: '2rem', fontSize: '0.95rem'}}>
+                Serving Bradenton, Sarasota, and Manatee County — licensed &amp; insured.
+              </p>
+              {[
+                {
+                  q: 'How much does paver sealing cost in Bradenton FL?',
+                  a: 'Paver sealing prices in Bradenton typically range from $0.75 to $2.50 per square foot depending on the surface condition, paver type, and sealer product selected. A standard residential driveway or pool deck runs $300–$900. We provide a free on-site estimate with transparent, itemized pricing — no hidden fees. Call 941.518.1657 or use our contact form.'
+                },
+                {
+                  q: 'Why are my pavers turning white? (Efflorescence)',
+                  a: 'White, chalky deposits on pavers are caused by efflorescence — mineral salts migrating to the surface as water evaporates through the paver. Florida\'s humidity accelerates this process. We use professional efflorescence cleaners and a controlled pressure washing technique to safely remove the deposits without etching the paver surface. Sealing after treatment prevents recurrence.'
+                },
+                {
+                  q: 'What is polymeric sand and why does it matter for paver joints?',
+                  a: 'Polymeric sand is a specially blended joint sand that hardens when activated with water, creating a firm bond between pavers. Unlike regular sand, it resists ant infestation, weed growth, and washout. After every clean & seal service, we re-apply polymeric joint sand as needed to lock pavers in place and prevent shifting — a step most budget operators skip.'
+                },
+                {
+                  q: 'Do you seal travertine pool decks?',
+                  a: 'Yes. Travertine requires a penetrating (impregnating) sealer rather than a surface film sealer to avoid trapping moisture and causing spalling. We use travertine-specific professional-grade sealers that protect against UV fade, staining, and algae while preserving the stone\'s natural look and texture. Travertine pool deck sealing is one of our most requested services in the Sarasota and Bradenton area.'
+                },
+                {
+                  q: 'My pool deck is slippery and has algae — what can you do?',
+                  a: 'Algae and mold growth on pool decks create a serious slip hazard. We use hot-water pressure washing with algae-specific treatment agents to remove all biological growth, then apply an anti-slip sealer to restore traction. Our pool deck restoration process addresses slippery surfaces, staining, faded color, and micro-crack sealing in a single visit.'
+                },
+              ].map(({q, a}) => (
+                <div key={q} style={{
+                  borderBottom: '1px solid rgba(255,255,255,0.08)',
+                  padding: '1.4rem 0',
+                }}>
+                  <h3 style={{color: '#f5a623', fontWeight: 700, fontSize: '1rem', marginBottom: '0.5rem'}}>{q}</h3>
+                  <p style={{color: 'rgba(255,255,255,0.68)', lineHeight: 1.8, margin: 0, fontSize: '0.92rem'}}>{a}</p>
+                </div>
+              ))}
             </Col>
           </Row>
         </Container>

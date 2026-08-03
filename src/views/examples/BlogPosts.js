@@ -50,22 +50,22 @@ export default function BlogPosts() {
   return (
     <>
       <Helmet>
-        <title>Residential Hardscape Services | Solafide Florida</title>
-        <meta name="description" content="Expert residential paver cleaning &amp; sealing, pool deck restoration, retaining walls, and driveway services across Florida. Free on-site estimates from Solafide Services." />
+        <title>Residential Paver Services | Bradenton FL | Solafide</title>
+        <meta name="description" content="Expert residential paver cleaning, pool deck restoration &amp; driveway sealing in Bradenton FL. We fix faded pavers, algae, efflorescence &amp; more. Free estimate." />
         <link rel="canonical" href="https://solafide-services.com/residential" />
-        <meta property="og:title" content="Residential Hardscape Services | Solafide Services — Florida" />
-        <meta property="og:description" content="Expert residential paver cleaning, sealing, pool deck restoration, retaining walls, and hardscape services across Florida. Free on-site estimates." />
+        <meta property="og:title" content="Residential Paver & Pool Deck Services | Bradenton FL | Solafide" />
+        <meta property="og:description" content="Residential paver cleaning, pool deck restoration & driveway sealing in Bradenton FL. We fix algae, faded pavers, efflorescence & slippery surfaces. Free estimate." />
         <meta property="og:url" content="https://solafide-services.com/residential" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://solafide-services.com/og-preview.jpg" />
         <meta property="og:site_name" content="Solafide Services" />
         <meta property="og:locale" content="en_US" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Residential Hardscape Services | Solafide Services — Florida" />
-        <meta name="twitter:description" content="Expert residential paver cleaning, pool deck restoration, and hardscape services across Florida. Free estimates." />
+        <meta name="twitter:title" content="Residential Paver & Pool Deck Services | Bradenton FL | Solafide" />
+        <meta name="twitter:description" content="We fix faded pavers, algae on pool decks, efflorescence, cracked pool decks & slippery surfaces in Bradenton FL. Free estimate." />
         <meta name="twitter:image" content="https://solafide-services.com/og-preview.jpg" />
         <meta name="twitter:site" content="@SolafideService" />
-        <meta name="keywords" content="residential paver cleaning Florida, pool deck restoration, retaining wall Florida, driveway cleaning, hardscape residential, Solafide Services" />
+        <meta name="keywords" content="paver cleaning and sealing Bradenton FL, pool deck restoration near me, pavers turning white efflorescence, algae on pool deck, faded pavers restoration, slippery pool deck solution, cracked pool deck repair, pool deck resurfacing, residential hardscape Bradenton, paver sealing Sarasota, Manatee County paver cleaning, free estimate paver sealing" />
       </Helmet>
       <ColorNavbar />
       <div className="wrapper" ref={wrapper}>
@@ -117,7 +117,74 @@ export default function BlogPosts() {
           </Row>
         </Container>
 
-        <br /><br />
+        <br />
+
+        {/* Problem-aware content section */}
+        <Container style={{paddingBottom: '3.5rem'}}>
+          <Row className="justify-content-center" style={{marginBottom: '1rem'}}>
+            <Col md="10">
+              <h2 style={{color: 'orange', textAlign: 'center', marginBottom: '0.5rem'}}>
+                Common Hardscape Problems We Fix in Bradenton &amp; Sarasota
+              </h2>
+              <p style={{color: 'rgba(255,255,255,0.55)', textAlign: 'center', marginBottom: '2.2rem', fontSize: '0.95rem'}}>
+                Recognize any of these? We solve them every day across Manatee County and beyond.
+              </p>
+              {[
+                {
+                  icon: '⬜',
+                  problem: 'Pavers Turning White',
+                  detail: 'White chalky patches on your pavers or pool deck are efflorescence — mineral salts pushed to the surface by moisture. Florida\'s humidity makes this extremely common. We remove efflorescence with professional-grade cleaners and seal the surface to prevent it returning. Left untreated, it worsens and can permanently stain the stone.'
+                },
+                {
+                  icon: '🌿',
+                  problem: 'Algae on Pool Deck — Slippery Surfaces',
+                  detail: 'Algae and mold thrive on unsealed or aging pool decks in Florida\'s warm, wet climate. They create dangerous slip conditions and an eyesore. We pressure wash with algae-specific treatment agents, then apply an anti-slip penetrating sealer that keeps the surface safe and clean for years. If your pool deck is slippery, this is a same-season fix.'
+                },
+                {
+                  icon: '🎨',
+                  problem: 'Faded Pavers — Dull, Washed-Out Color',
+                  detail: 'UV exposure, oxidation, and surface wear fade even the best pavers over time. Professional paver restoration — deep cleaning followed by a color-enhancing sealer — brings back the original vibrancy without replacement. Wet-look and natural-finish sealers are both available depending on your preference.'
+                },
+                {
+                  icon: '🔧',
+                  problem: 'Cracked Pool Deck & Pool Deck Resurfacing',
+                  detail: 'Florida\'s ground movement, root pressure, and thermal expansion cause pool deck cracking. Minor to moderate cracks can be repaired and sealed before they widen. For heavily damaged decks, we offer pool deck resurfacing — restoring the surface with new material and a protective sealer, at a fraction of the cost of full replacement.'
+                },
+                {
+                  icon: '🌱',
+                  problem: 'Weeds & Ants Between Paver Joints',
+                  detail: 'When joint sand washes out, weeds take root and ants nest between your pavers, causing shifting and uneven surfaces. After deep cleaning, we apply polymeric joint sand that hardens and locks in place — eliminating the gaps that weeds and insects exploit. It\'s the single most effective long-term maintenance step for any paver surface.'
+                },
+              ].map(({icon, problem, detail}) => (
+                <div key={problem} style={{
+                  display: 'flex', gap: '1rem', alignItems: 'flex-start',
+                  borderBottom: '1px solid rgba(255,255,255,0.07)',
+                  padding: '1.4rem 0',
+                }}>
+                  <span style={{fontSize: '1.6rem', lineHeight: 1, flexShrink: 0}}>{icon}</span>
+                  <div>
+                    <h3 style={{color: '#f5a623', fontWeight: 700, fontSize: '1rem', marginBottom: '0.4rem'}}>{problem}</h3>
+                    <p style={{color: 'rgba(255,255,255,0.68)', lineHeight: 1.8, margin: 0, fontSize: '0.92rem'}}>{detail}</p>
+                  </div>
+                </div>
+              ))}
+              <div style={{textAlign: 'center', marginTop: '2.5rem'}}>
+                <a href="/contact-us" style={{
+                  display: 'inline-block', padding: '14px 40px',
+                  background: '#f96332', color: '#fff', borderRadius: '28px',
+                  fontWeight: 700, fontSize: '0.95rem', textDecoration: 'none',
+                  boxShadow: '0 8px 24px rgba(249,99,50,0.35)',
+                }}>
+                  Get a Free On-Site Estimate
+                </a>
+                <p style={{color: 'rgba(255,255,255,0.4)', fontSize: '0.8rem', marginTop: '0.75rem'}}>
+                  Licensed &amp; insured · Bradenton, Sarasota &amp; Manatee County · Same-day response
+                </p>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+
         <DemoFooter />
       </div>
     </>

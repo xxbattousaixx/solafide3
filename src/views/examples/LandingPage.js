@@ -67,8 +67,8 @@ export default function Gallery() {
   return (
     <>
       <Helmet>
-        <title>Project Gallery | Solafide Services Florida</title>
-        <meta name="description" content="Browse Solafide Services' project gallery. Custom driveways, retaining walls, waterfall features, outdoor lighting, and masonry work across Florida." />
+        <title>Project Gallery | Solafide Services Bradenton FL</title>
+        <meta name="description" content="Browse Solafide Services' project gallery — paver sealing, pool deck restoration, driveways &amp; retaining walls in Bradenton FL &amp; across Florida." />
         <link rel="canonical" href="https://solafide-services.com/gallery" />
         <meta property="og:title" content="Gallery | Solafide Services — Florida Masonry & Hardscape Portfolio" />
         <meta property="og:description" content="Browse Solafide Services' project gallery. Custom driveways, retaining walls, waterfall features, outdoor lighting, and masonry work across Florida." />
@@ -82,6 +82,7 @@ export default function Gallery() {
         <meta name="twitter:description" content="Browse our portfolio of paver installations, pool decks, retaining walls, waterfall features, and hardscape work across Florida." />
         <meta name="twitter:image" content="https://solafide-services.com/og-preview.jpg" />
         <meta name="twitter:site" content="@SolafideService" />
+        <meta name="keywords" content="paver sealing Bradenton FL, pool deck restoration near me, hardscape gallery Florida, paver restoration Sarasota, Manatee County hardscape, retaining wall Florida, custom waterfall features, driveway sealing Bradenton, masonry portfolio Florida, Solafide Services" />
       </Helmet>
 
       <ColorNavbar />

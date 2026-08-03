@@ -30,9 +30,10 @@ export default function Index() {
     <>
       <Helmet>
         <title>Solafide Services | Florida Hardscape Specialists</title>
-        <meta name="description" content="Solafide Services — Florida's premier paver cleaning, sealing, pool deck restoration, and hardscape specialists." />
+        <meta name="description" content="Solafide Services — licensed &amp; insured paver sealing, pool deck restoration &amp; pressure washing in Bradenton FL. Serving Sarasota &amp; Manatee County." />
         <link rel="canonical" href="https://solafide-services.com/" />
         <meta name="robots" content="noindex, follow" />
+        <meta name="keywords" content="paver sealing Bradenton FL, pool deck restoration near me, pressure washing company Bradenton, paver restoration Sarasota, Manatee County hardscape, licensed and insured hardscape Florida" />
         <meta property="og:title" content="Solafide Services | Florida Hardscape Restoration" />
         <meta property="og:description" content="Paver cleaning, sealing, pool deck restoration, and hardscape services across Florida." />
         <meta property="og:url" content="https://solafide-services.com/" />

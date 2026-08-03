@@ -189,14 +189,14 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Solafide Services | Florida Paver &amp; Pool Deck Experts</title>
-        <meta name="description" content="Florida's trusted paver cleaning, sealing &amp; pool deck restoration specialists. Free on-site estimates for residential &amp; commercial properties." />
+        <title>Paver Sealing &amp; Restoration | Bradenton FL | Solafide</title>
+        <meta name="description" content="Licensed &amp; insured paver sealing, pool deck restoration &amp; pressure washing in Bradenton FL. Serving Sarasota &amp; Manatee County. Free on-site estimates." />
         <link rel="canonical" href="https://solafide-services.com/home" />
-        <meta property="og:title" content="Solafide Services | Paver Cleaning, Sealing & Pool Deck Restoration — Florida" />
-        <meta property="og:description" content="Restore your pavers, driveways, and pool decks to like-new condition. Expert clean & seal, pressure washing, and hardscape restoration across Florida." />
+        <meta property="og:title" content="Paver Sealing & Pool Deck Restoration | Bradenton FL | Solafide Services" />
+        <meta property="og:description" content="Licensed paver cleaning, sealing, pool deck restoration & pressure washing in Bradenton FL. Serving Sarasota & Manatee County. Free on-site estimates." />
         <meta property="og:url" content="https://solafide-services.com" />
         <meta property="og:type" content="website" />
-        <meta name="keywords" content="paver cleaning Florida, paver sealing, pool deck restoration, pressure washing, driveway cleaning, hardscape restoration, Solafide Services" />
+        <meta name="keywords" content="paver sealing Bradenton FL, pool deck restoration near me, pressure washing company Bradenton, paver cleaning and sealing, paver restoration Sarasota, Manatee County hardscape, pool deck restoration, hardscape restoration Florida, free estimate paver sealing, licensed and insured hardscape, Solafide Services" />
         <meta property="og:image" content="https://solafide-services.com/og-preview.jpg" />
         <meta property="og:site_name" content="Solafide Services" />
         <meta property="og:locale" content="en_US" />

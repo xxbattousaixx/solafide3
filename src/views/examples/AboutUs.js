@@ -56,14 +56,14 @@ export default function AboutUs() {
   return (
     <>
       <Helmet>
-        <title>About Solafide Services | Florida Hardscape Experts</title>
-        <meta name="description" content="Solafide Services is Florida's trusted hardscape restoration company — paver cleaning, sealing, pool deck refinishing, retaining walls, and pressure washing. Free on-site estimates." />
+        <title>About Solafide Services | Bradenton FL Hardscape Experts</title>
+        <meta name="description" content="Licensed &amp; insured hardscape specialists in Bradenton FL — paver cleaning, sealing, pool deck restoration &amp; pressure washing. Serving Sarasota &amp; Manatee County." />
         <link rel="canonical" href="https://solafide-services.com/about-us" />
-        <meta property="og:title" content="About Solafide Services | Paver & Hardscape Specialists in Florida" />
-        <meta property="og:description" content="Learn why Florida homeowners, HOAs, and property managers trust Solafide for paver cleaning, sealing, pool deck restoration, and hardscape work." />
+        <meta property="og:title" content="About Solafide Services | Licensed Hardscape Specialists — Bradenton FL" />
+        <meta property="og:description" content="Licensed & insured paver cleaning, sealing, pool deck restoration & pressure washing in Bradenton FL. Serving Sarasota & Manatee County. Free on-site estimates." />
         <meta property="og:url" content="https://solafide-services.com/about-us" />
         <meta property="og:type" content="website" />
-        <meta name="keywords" content="paver cleaning Florida, paver sealing, pool deck restoration, hardscape specialist Florida, Solafide Services" />
+        <meta name="keywords" content="paver sealing Bradenton FL, paver restoration Sarasota, Manatee County hardscape, licensed and insured paver cleaning, best hardscape company Bradenton, affordable paver sealing Florida, pool deck restoration near me, pressure washing company Bradenton, hardscape specialist Florida, Solafide Services" />
         <meta property="og:image" content="https://solafide-services.com/og-preview.jpg" />
         <meta property="og:site_name" content="Solafide Services" />
         <meta property="og:locale" content="en_US" />

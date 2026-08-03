@@ -34,22 +34,22 @@ export default function BlogPost() {
   return (
     <>
       <Helmet>
-        <title>Commercial Hardscape Services | Solafide Florida</title>
-        <meta name="description" content="Commercial paver cleaning, sealing, pressure washing &amp; pool deck refinishing for HOAs and property managers across Florida. Get a free estimate from Solafide Services." />
+        <title>Commercial Hardscape Services | Bradenton FL | Solafide</title>
+        <meta name="description" content="Licensed &amp; insured commercial hardscape for HOAs &amp; property managers in Bradenton FL. Paver cleaning, sealing, pressure washing. Best rates. Free estimate." />
         <link rel="canonical" href="https://solafide-services.com/commercial" />
-        <meta property="og:title" content="Commercial Hardscape Services | Solafide Services — Florida" />
-        <meta property="og:description" content="Professional commercial paver cleaning, sealing, pressure washing, and hardscape restoration for HOAs, property managers, and commercial properties across Florida." />
+        <meta property="og:title" content="Commercial Hardscape Services | Bradenton FL | Solafide Services" />
+        <meta property="og:description" content="Licensed & insured commercial paver cleaning, sealing & pressure washing for HOAs & property managers in Bradenton, Sarasota & Manatee County. Free estimate." />
         <meta property="og:url" content="https://solafide-services.com/commercial" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://solafide-services.com/og-preview.jpg" />
         <meta property="og:site_name" content="Solafide Services" />
         <meta property="og:locale" content="en_US" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Commercial Hardscape Services | Solafide Services — Florida" />
-        <meta name="twitter:description" content="Commercial paver cleaning, sealing, pressure washing, and hardscape restoration for HOAs and property managers across Florida." />
+        <meta name="twitter:title" content="Commercial Hardscape Services | Bradenton FL | Solafide Services" />
+        <meta name="twitter:description" content="Licensed & insured commercial paver cleaning, sealing & pressure washing for HOAs & property managers. Bradenton, Sarasota, Manatee County. Free estimate." />
         <meta name="twitter:image" content="https://solafide-services.com/og-preview.jpg" />
         <meta name="twitter:site" content="@SolafideService" />
-        <meta name="keywords" content="commercial paver cleaning Florida, HOA paver sealing, commercial pressure washing, property management hardscape, Solafide Services" />
+        <meta name="keywords" content="commercial paver cleaning Bradenton FL, HOA paver sealing Florida, commercial pressure washing Bradenton, property management hardscape Manatee County, paver restoration Sarasota, affordable commercial hardscape, best paver sealing company Florida, licensed and insured hardscape, same day pressure washing Florida, free estimate commercial paver" />
       </Helmet>
       <ColorNavbar />
       <div className="wrapper" ref={wrapper}>

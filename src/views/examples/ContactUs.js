@@ -217,22 +217,22 @@ export default function ContactUs() {
   return (
     <>
       <Helmet>
-        <title>Contact Us | Solafide Services — Free Paver & Hardscape Estimates in Florida</title>
-        <meta name="description" content="Contact Solafide Services for a free on-site estimate. We serve homeowners, HOAs, and commercial properties across Florida — paver cleaning, sealing, pool decks, and pressure washing." />
+        <title>Free Paver Estimate | Bradenton FL | Solafide Services</title>
+        <meta name="description" content="Request a free on-site paver sealing or pool deck estimate in Bradenton FL. Licensed &amp; insured. Same-day response. Serving Sarasota &amp; Manatee County." />
         <link rel="canonical" href="https://solafide-services.com/contact-us" />
-        <meta property="og:title" content="Contact Solafide Services | Free Hardscape Estimates — Florida" />
-        <meta property="og:description" content="Request a free on-site estimate from Solafide Services. Transparent pricing, fast scheduling, and expert hardscape restoration across Florida." />
+        <meta property="og:title" content="Free Paver & Pool Deck Estimate | Bradenton FL | Solafide Services" />
+        <meta property="og:description" content="Request a free on-site estimate for paver sealing, pool deck restoration or pressure washing in Bradenton FL. Licensed & insured. Same-day response." />
         <meta property="og:url" content="https://solafide-services.com/contact-us" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://solafide-services.com/og-preview.jpg" />
         <meta property="og:site_name" content="Solafide Services" />
         <meta property="og:locale" content="en_US" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Contact Solafide Services | Free Hardscape Estimates — Florida" />
-        <meta name="twitter:description" content="Request a free on-site estimate — paver cleaning, sealing, pool deck restoration, and pressure washing across Florida." />
+        <meta name="twitter:title" content="Free Paver & Pool Deck Estimate | Bradenton FL | Solafide Services" />
+        <meta name="twitter:description" content="Free on-site paver sealing & pool deck estimate in Bradenton FL. Licensed & insured. Same-day response. Sarasota & Manatee County." />
         <meta name="twitter:image" content="https://solafide-services.com/og-preview.jpg" />
         <meta name="twitter:site" content="@SolafideService" />
-        <meta name="keywords" content="contact Solafide Services, free paver estimate Florida, hardscape estimate, paver cleaning quote" />
+        <meta name="keywords" content="free estimate paver sealing Bradenton FL, paver cleaning quote Bradenton, same day pressure washing Florida, free pool deck estimate, licensed and insured hardscape Florida, paver sealing cost Bradenton, affordable pressure washing Bradenton, contact Solafide Services, hardscape estimate Sarasota, Manatee County paver quote" />
       </Helmet>
       <ColorNavbar />
       <div className="wrapper" ref={wrapper}>

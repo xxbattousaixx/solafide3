@@ -67,7 +67,7 @@ export default function Gallery() {
   return (
     <>
       <Helmet>
-        <title>Gallery | Solafide Services — Florida Masonry & Hardscape Portfolio</title>
+        <title>Project Gallery | Solafide Services Florida</title>
         <meta name="description" content="Browse Solafide Services' project gallery. Custom driveways, retaining walls, waterfall features, outdoor lighting, and masonry work across Florida." />
         <link rel="canonical" href="https://solafide-services.com/gallery" />
         <meta property="og:title" content="Gallery | Solafide Services — Florida Masonry & Hardscape Portfolio" />
@@ -195,6 +195,69 @@ export default function Gallery() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* ── About the work ── */}
+        <div style={{
+          maxWidth: "860px", margin: "0 auto", padding: "60px 24px 0",
+          borderTop: "1px solid rgba(255,255,255,0.07)",
+        }}>
+          <h2 style={{ color: "#fff", fontWeight: 800, fontSize: "clamp(1.5rem,3.5vw,2.2rem)", marginBottom: "1.2rem" }}>
+            Florida Hardscape &amp; Masonry — Our Work Speaks for Itself
+          </h2>
+          <p style={{ color: "rgba(255,255,255,0.65)", lineHeight: 1.8, fontSize: "1rem", marginBottom: "1.4rem" }}>
+            Every image in this gallery represents a real project completed by the Solafide Services team across
+            Florida — from Bradenton and Sarasota to Tampa and beyond. We specialize in paver cleaning and sealing,
+            pool deck restoration, custom retaining walls, concrete curbing, driveway resurfacing, and outdoor
+            water features. No two properties are the same, and we take pride in tailoring every approach to the
+            specific surface, environment, and goals of each client.
+          </p>
+          <p style={{ color: "rgba(255,255,255,0.65)", lineHeight: 1.8, fontSize: "1rem", marginBottom: "1.4rem" }}>
+            Our hardscape and masonry work is built to last. We use professional-grade sealants, polymeric joint
+            sand, and commercial pressure washing equipment to deliver results that hold up against Florida's heat,
+            rain, and humidity. Whether your pavers need a deep clean, your pool deck has seen better days, or
+            you're starting a brand-new outdoor project, our team brings the same level of craftsmanship to every job.
+          </p>
+          <p style={{ color: "rgba(255,255,255,0.65)", lineHeight: 1.8, fontSize: "1rem", marginBottom: "2rem" }}>
+            Want to see more of our work? Follow us on{" "}
+            <a
+              href="https://www.facebook.com/SolafideL7/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: ACCENT, textDecoration: "underline" }}
+            >
+              Facebook
+            </a>{" "}
+            for project updates, before-and-after photos, and client testimonials. You can also learn more about
+            Florida hardscape best practices through the{" "}
+            <a
+              href="https://www.icpi.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: ACCENT, textDecoration: "underline" }}
+            >
+              Interlocking Concrete Pavement Institute (ICPI)
+            </a>
+            , the industry's leading authority on paver installation and maintenance standards.
+          </p>
+
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "16px", marginBottom: "60px" }}>
+            {[
+              { label: "Paver Cleaning & Sealing", to: "/clean-seal" },
+              { label: "Residential Services", to: "/residential" },
+              { label: "Commercial Services", to: "/commercial" },
+              { label: "Get a Free Estimate", to: "/contact-us" },
+            ].map(({ label, to }) => (
+              <Link key={to} to={to} style={{
+                padding: "10px 24px", borderRadius: "24px",
+                border: `2px solid ${ACCENT}`, color: ACCENT,
+                fontWeight: 600, fontSize: "0.88rem", textDecoration: "none",
+                transition: "background 0.2s, color 0.2s",
+              }}>
+                {label}
+              </Link>
+            ))}
+          </div>
         </div>
 
         {/* ── CTA strip ── */}

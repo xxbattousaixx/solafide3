@@ -29,7 +29,7 @@ export default function Index() {
   return (
     <>
       <Helmet>
-        <title>Welcome to Solafide Services | Florida Hardscape Restoration Specialists</title>
+        <title>Solafide Services | Florida Hardscape Specialists</title>
         <meta name="description" content="Solafide Services — Florida's premier paver cleaning, sealing, pool deck restoration, and hardscape specialists." />
         <link rel="canonical" href="https://solafide-services.com/" />
         <meta name="robots" content="noindex, follow" />

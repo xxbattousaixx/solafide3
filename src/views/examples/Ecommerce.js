@@ -38,8 +38,8 @@ export default function Ecommerce() {
   return (
     <>
       <Helmet>
-        <title>Paver Cleaning, Pressure Washing & Clean & Seal | Solafide Services — Florida</title>
-        <meta name="description" content="Professional paver pressure washing and clean & seal services by Solafide Services. We remove stains, algae, and buildup then seal for lasting protection. Serving residential and commercial clients across Florida." />
+        <title>Paver Clean &amp; Seal | Solafide Services Florida</title>
+        <meta name="description" content="Professional paver pressure washing &amp; clean and seal by Solafide Services. Remove stains, restore color, and protect surfaces with professional-grade sealants. Serving Florida." />
         <link rel="canonical" href="https://solafide-services.com/clean-seal" />
         <meta property="og:title" content="Paver Cleaning, Pressure Washing & Clean & Seal | Solafide Services" />
         <meta property="og:description" content="Expert paver pressure washing and sealing services across Florida. Remove stains, restore color, and protect your surfaces with professional-grade sealants." />

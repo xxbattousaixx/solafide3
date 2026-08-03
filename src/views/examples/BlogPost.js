@@ -34,8 +34,8 @@ export default function BlogPost() {
   return (
     <>
       <Helmet>
-        <title>Commercial Hardscape Services | Paver Cleaning & Restoration — Solafide Services</title>
-        <meta name="description" content="Solafide Services delivers expert commercial hardscape restoration — paver cleaning, sealing, pressure washing, masonry, and pool deck refinishing for HOAs, property managers, and commercial clients across Florida." />
+        <title>Commercial Hardscape Services | Solafide Florida</title>
+        <meta name="description" content="Commercial paver cleaning, sealing, pressure washing &amp; pool deck refinishing for HOAs and property managers across Florida. Get a free estimate from Solafide Services." />
         <link rel="canonical" href="https://solafide-services.com/commercial" />
         <meta property="og:title" content="Commercial Hardscape Services | Solafide Services — Florida" />
         <meta property="og:description" content="Professional commercial paver cleaning, sealing, pressure washing, and hardscape restoration for HOAs, property managers, and commercial properties across Florida." />
@@ -62,7 +62,7 @@ export default function BlogPost() {
           <Container>
             <Row>
               <Col className="ml-auto mr-auto text-center" md="8">
-                <h1 style={{ color: "orange" }} className="title">Solafide</h1>
+                <h2 style={{ color: "orange" }} className="title">Solafide</h2>
               </Col>
             </Row>
           </Container>

@@ -189,8 +189,8 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Solafide Services | Paver Cleaning, Sealing & Pool Deck Restoration — Florida</title>
-        <meta name="description" content="Solafide Services — Florida's trusted specialists in paver cleaning, sealing, pool deck restoration, and pressure washing. Free on-site estimates. Residential & commercial." />
+        <title>Solafide Services | Florida Paver &amp; Pool Deck Experts</title>
+        <meta name="description" content="Florida's trusted paver cleaning, sealing &amp; pool deck restoration specialists. Free on-site estimates for residential &amp; commercial properties." />
         <link rel="canonical" href="https://solafide-services.com/home" />
         <meta property="og:title" content="Solafide Services | Paver Cleaning, Sealing & Pool Deck Restoration — Florida" />
         <meta property="og:description" content="Restore your pavers, driveways, and pool decks to like-new condition. Expert clean & seal, pressure washing, and hardscape restoration across Florida." />

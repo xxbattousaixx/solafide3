@@ -316,9 +316,9 @@ export default function ContactUs() {
             <Row className="mt-5 mb-4 pt-5">
               <Col className="ml-auto mr-auto text-center mt-5" md="8">
                 <Badge color="info">Leave a message</Badge>
-                <h1 className="title">
+                <h2 className="title">
                   Tell us more about <b>yourself</b>
-                </h1>
+                </h2>
                 <h4 className="desc">
                   Tell us about your pavers, pool deck, driveway, or any other outdoor surface — we'll assess the condition and recommend the best approach with a clear, upfront quote.
                 </h4>

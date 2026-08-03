@@ -50,8 +50,8 @@ export default function BlogPosts() {
   return (
     <>
       <Helmet>
-        <title>Residential Hardscape Services | Paver Cleaning, Pool Decks & More — Solafide Services</title>
-        <meta name="description" content="Solafide Services provides expert residential hardscape restoration — paver cleaning & sealing, pool deck refinishing, retaining walls, driveways, and custom waterfall features across Florida." />
+        <title>Residential Hardscape Services | Solafide Florida</title>
+        <meta name="description" content="Expert residential paver cleaning &amp; sealing, pool deck restoration, retaining walls, and driveway services across Florida. Free on-site estimates from Solafide Services." />
         <link rel="canonical" href="https://solafide-services.com/residential" />
         <meta property="og:title" content="Residential Hardscape Services | Solafide Services — Florida" />
         <meta property="og:description" content="Expert residential paver cleaning, sealing, pool deck restoration, retaining walls, and hardscape services across Florida. Free on-site estimates." />

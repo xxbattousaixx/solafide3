@@ -1,7 +1,7 @@
 
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 // styles
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -53,7 +53,7 @@ if (root.hasChildNodes()) {
       <Route path="/blog" element={<Blog />} />
       <Route path="/blog/:postId" element={<BlogPost />} />
 
-      <Route path="/" element={<Navigate to="/index" replace />} />
+      <Route path="/" element={<Index />} />
     </Routes>
     <CookieBanner />
   </BrowserRouter></HelmetProvider>, root1)} else {root1.render( <HelmetProvider>
@@ -75,7 +75,7 @@ if (root.hasChildNodes()) {
       <Route path="/blog" element={<Blog />} />
       <Route path="/blog/:postId" element={<BlogPost />} />
 
-      <Route path="/" element={<Navigate to="/index" replace />} />
+      <Route path="/" element={<Index />} />
     </Routes>
     <CookieBanner />
   </BrowserRouter></HelmetProvider>
